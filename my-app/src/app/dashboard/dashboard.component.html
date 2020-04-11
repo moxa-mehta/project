@@ -1,0 +1,79 @@
+<div class="dropdown">
+  <button class="dropbtn"><i class="fa fa-bars">  Menu</i></button>
+  <div class="dropdown-content">
+    <a href="http://localhost:4200/client">Client</a>
+    <a href="#">Account</a>
+    
+  </div>
+</div>
+
+<table id =demo >
+  <td>
+    <div style="height:600px;overflow:auto;">
+
+  <table id = dashboard>
+    <tr>
+      <th *ngFor = "let column of headers" >{{column}} </th>
+    </tr>
+ 
+
+
+    <tbody>
+    <tr *ngFor = "let row of dashboarddata">
+      
+      <td *ngFor = "let column of headers">
+        {{row[column]}}
+
+      </td>
+      
+    </tr>
+  </tbody>
+  
+  </table>
+</div>
+</td>
+
+<td>
+  
+  
+</td>
+<td>
+  <table  id = dashboard>
+    <tr>
+      <th *ngFor = "let column of akdheaders" >{{column}} </th>
+    </tr>
+ 
+
+
+    <tbody>
+    <tr *ngFor = "let row of akddata">
+      
+      <td *ngFor = "let column of aheaders">
+        {{row[column]}}
+
+      </td>
+      
+    </tr>
+  </tbody>
+
+  </table>
+</td>
+
+</table>
+<div>
+  <label>BAZAR &nbsp;
+    <input [(ngModel)]="hero.name" size="2" />
+  </label>
+</div>
+<div>
+  <button (click)='getAllEmployees(hero)'>Button Click</button>
+</div>
+
+
+
+
+
+
+
+
+

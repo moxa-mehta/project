@@ -1,0 +1,24 @@
+
+<table id = dashboard>
+    <tr>
+        <th *ngFor = "let column of headers" >{{column}} </th>
+      </tr>
+      <tbody>
+        <tr *ngFor = "let row of clientdata">
+          
+          <td *ngFor = "let column of column">
+            {{row[column]}}
+    
+          </td>
+          <td>
+              <button type="submit" class="btn btn-primary" (click)="update(row['_id'])"  style="margin:5px;">Update </button>
+
+              <button type="submit" class="btn btn-primary" (click)="delete(row['_id'])" style="margin:5px;">Delete</button>
+          </td>
+          
+        </tr>
+      </tbody>
+      
+</table>
+<button type="submit" class="btn btn-primary" (click)="back()" style="margin:5px;" >Add Client</button>
+<button type="submit" class="btn btn-primary" (click)="home()" style="margin:5px;" >Home</button>
