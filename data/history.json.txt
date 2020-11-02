@@ -1,0 +1,21 @@
+/* 1 */
+{
+    "_id" : ObjectId("5f9d420a7efd8dddcc229d54"),
+    "client_id" : "1",
+    "bet" : "119",
+    "bet_total" : "119",
+    "code" : "2",
+    "number" : "90",
+    "bazar" : "1"
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5f9d424b7efd8dddcc229d55"),
+    "client_id" : "1",
+    "bet" : "30",
+    "bet_total" : "30",
+    "code" : "2",
+    "number" : "100",
+    "bazar" : "1"
+}

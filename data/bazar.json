@@ -1,0 +1,13 @@
+/* 1 */
+{
+    "_id" : ObjectId("5f9209ea3ef114898212ef66"),
+    "bazar_id" : "1",
+    "name" : "A"
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5f920a163ef114898212ef74"),
+    "bazar_id" : "2",
+    "name" : "B"
+}

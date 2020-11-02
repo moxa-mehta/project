@@ -1,0 +1,25 @@
+/* 1 */
+{
+    "_id" : ObjectId("5f8a137e147050358377467f"),
+    "name" : "A",
+    "client_id" : "1",
+    "tp_rate" : "100",
+    "sp_rate" : "100",
+    "dp_rate" : "100",
+    "akd_rate" : "100",
+    "pana_com" : "10",
+    "akd_com" : "10"
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("5f8a13b11470503583774680"),
+    "name" : "B",
+    "client_id" : "2",
+    "tp_rate" : "200",
+    "sp_rate" : "200",
+    "dp_rate" : "200",
+    "akd_rate" : "200",
+    "pana_com" : "5",
+    "akd_com" : "5"
+}

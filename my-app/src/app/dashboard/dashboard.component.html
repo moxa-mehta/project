@@ -1,0 +1,140 @@
+<div class="dropdown">
+  <button class="dropbtn"><i class="fa fa-bars"> Menu</i></button>
+  <div class="dropdown-content">
+    <a href="http://localhost:4200/client">Client</a>
+    <a href="#">Account</a>
+
+  </div>
+</div>
+
+<table id=demo>
+  <td>
+    <div style="height:600px;overflow:auto;">
+
+      <table id=dashboard>
+        <tr>
+          <th *ngFor="let column of headers">{{column}} </th>
+        </tr>
+
+
+
+        <tbody>
+          <tr *ngFor="let row of dashboarddata">
+
+            <td *ngFor="let column of headers; index as i" id={{row[column]}} >
+              <div *ngIf="(i%2 !== 0 && row['type']=='S' && row[column]>
+                sp_limit) ||
+                (i%2 !== 0 && row['type'] == 'D' && row[column] > dp_limit) ||
+                (i%2 !== 0 && row['type'] == 'T' && row[column] > tp_limit); else elseBlock" style="background-color: red;">
+                {{row[column]}}
+              </div>
+              <ng-template #elseBlock>
+                {{row[column]}}
+              </ng-template>
+              
+
+            </td>
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </td>
+  <td>
+    <table id=dashboard>
+      <tr>
+        <th *ngFor="let column of akdheaders">{{column}} </th>
+      </tr>
+
+
+
+      <tbody>
+        <tr *ngFor="let row of akddata">
+
+          <td *ngFor="let column of aheaders">
+            {{row[column]}}
+
+          </td>
+
+        </tr>
+      </tbody>
+
+    </table>
+  </td>
+
+</table>
+<div>
+  <div><br>
+    <label>BAZAR &nbsp;
+      <input (change)="getdashboarddata()" [(ngModel)]="bazar.bazar_id" size="1" />
+    </label>
+
+  </div>
+  <div>
+    <label> Client &nbsp;
+      <input (change)="getclientdata()" [(ngModel)]="client.clientid" size="1" />
+    </label>
+    <label>&nbsp; Bet &nbsp;
+      <input [(ngModel)]="bet" size="3" />
+    </label>
+    <label> &nbsp;Code &nbsp;
+      <input [(ngModel)]="code" size="1" />
+    </label>
+    <label>&nbsp;Number &nbsp;
+      <input [(ngModel)]="number" size="3" />
+    </label>
+
+
+  </div>
+  <div>
+
+    <label> SP Limit &nbsp;
+      <input [(ngModel)]="sp_limit" size="3" />
+    </label>
+    <label> &nbsp;DP limit &nbsp;
+      <input [(ngModel)]="dp_limit" size="3" />
+    </label>
+    <label> &nbsp;TP limit &nbsp;
+      <input [(ngModel)]="tp_limit" size="3" />
+    </label>
+
+    <label> &nbsp;AKD limit &nbsp;
+      <input [(ngModel)]="akd_limit" size="3" />
+    </label>
+  </div>
+  <div>
+    <label> Name &nbsp;
+      <input [(ngModel)]="client.name" size="1" />
+    </label>
+    <label> &nbsp;Pana Total &nbsp;
+      <input [(ngModel)]="panatotal" size="3" />
+    </label>
+    <label>&nbsp; AKD Total &nbsp;
+      <input [(ngModel)]="akdtotal" size="3" />
+    </label>
+    <label> &nbsp;Total &nbsp;
+      <input [(ngModel)]="total" size="3" />
+    </label>
+
+  </div>
+  <div>
+    <button (click)='getAllEmployees()'>Button Click</button>
+  </div>
+
+</div>
+<table id=history>
+  <tr>
+    <th *ngFor="let row of this.historyheaders">{{row}}</th>
+  </tr>
+  <tbody>
+    <tr *ngFor="let row of this.historydata">
+
+      <td *ngFor="let column of this.historyheaders">
+        {{row[column]}}
+
+      </td>
+
+    </tr>
+  </tbody>
+</table>

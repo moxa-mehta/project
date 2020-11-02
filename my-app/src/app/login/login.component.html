@@ -1,0 +1,36 @@
+<div class="col-sm-4 col-md-offset-5">
+<h2>Login</h2>
+</div>
+    <br/>
+    <br/>
+    <form name="form" ng-submit="login()" role="form">
+      <div class="container">
+        <div class="col-sm-4 col-md-offset-4">
+          <div class="form-group">
+          <label for="uname"><b>Username&nbsp;&nbsp;&nbsp;</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" class="form-control" [(ngModel)]="username" required>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="col-sm-4 col-md-offset-4">
+          <div class="form-group">
+          <label for="psw"><b>Password&nbsp;&nbsp;&nbsp;</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" class="form-control" [(ngModel)]="password" required>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        
+          <div class="col-md-4 col-md-offset-4">
+            <div class="form-actions">
+          <button type="submit" (click)="login()" class="btn btn-danger">Login</button>
+            </div>
+
+            
+          
+        
+        </div>
+        </div>
+    </form>

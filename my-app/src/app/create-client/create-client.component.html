@@ -1,0 +1,88 @@
+<form>
+  
+    <div class="form-group ">
+      <div class="col-xs-2">
+      <label >Client Id</label>
+      
+      <input  class="form-control" [(ngModel)]="client.clientid" name = "client_id" />
+      
+      </div>
+    </div>
+  
+   
+    <div class="form-group row">
+      <div class="col-xs-2">
+      <label >Client Name</label>
+      
+      <input  class="form-control" [(ngModel)]="client.name" name = "client_name"  />
+      
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <div class="col-xs-2">
+      <label >SP Rate</label>
+      
+      <input  class="form-control" [(ngModel)]="client.sp_rate" name = "sp_rate" size="2" />
+  
+     
+      
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-2">
+      <label >DP Rate</label>
+      
+      <input  class="form-control" [(ngModel)]="client.dp_rate" name = "dp_rate" size="2" />
+      
+      </div>
+    </div>
+    <div class="form-group ">
+      <div class="col-xs-2">
+      <label for="client_id">TP Rate</label>
+      
+      <input  class="form-control" [(ngModel)]="client.tp_rate" name = "tp_rate" />
+      
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-2">
+      <label for="client_id">AKD Rate</label>
+      
+      <input  class="form-control" [(ngModel)]="client.akd_rate" name = "akd_rate" />
+      
+      </div>
+    </div>
+    <div class="form-group ">
+      <div class="col-xs-2">
+      <label for="client_id">Pana commission</label>
+      
+      <input  class="form-control" [(ngModel)]="client.pana_com" name = "pana_com"/>
+      
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-2">
+      <label for="client_id">AKD commission</label>
+      
+      <input  class="form-control" [(ngModel)]="client.akd_com" name = "akd_com" />
+      
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-2">
+      <button type="submit" class="btn btn-primary" (click)='addclient(client)'>{{buttonname}}</button>
+    </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-2">
+        <button type="submit" class="btn btn-primary" (click)='back()' >BACK</button>
+    </div>
+    </div>
+   
+   
+  
+    
+      </form>
+  
+    
