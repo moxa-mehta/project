@@ -1,0 +1,81 @@
+<div>
+Date :
+<select name="date" id="date" [(ngModel)] = "dropdown" 
+#mySelect (change)='onOptionsSelected(mySelect.value)'>
+    <option  *ngFor="let row of datedata" value="{{row}}">{{row}}</option>
+  </select>
+</div>
+
+
+
+
+
+
+
+<div>
+    <label>Client &nbsp; 
+        <input [(ngModel)] = "client"  size = "2"> 
+    </label>
+    <label> &nbsp; Bazar &nbsp;
+        <input [(ngModel)] = "bazar" size ="2"> 
+    </label>
+</div>
+<div>
+<button (click)='getclientdata()'>Client Data</button>
+<button (click)='getbazardata()'>Bazar Data</button>
+<button (click)='getclientday()'>Client Data for a day</button>
+<button (click)='getclientoverall()'>Selected Client Overall</button>
+<button>All Client Overall</button>
+</div>
+
+<div id = "dcalc">
+    <table id= dashboard >
+        <th>Bazar</th>
+        <th>Client</th>
+        <th>Total</th>
+        <th>TotalPanu</th>
+        <th>TotalAkd</th>
+        <th>Valan</th>
+        <th>Commission</th>
+        <th>Final</th>
+        <tbody>
+            <tr *ngFor="let row of this.clientaccount">
+                <div *ngIf = "row['final'] >= 0">
+                <td>{{row['bazar']}}</td>
+                <td>{{row['client_id']}}</td>
+                <td>{{row['total']}}</td>
+                <td>{{row['totalpanu']}}</td>
+                <td>{{row['totalakd']}}</td>
+                <td>{{row['valan']}}</td>
+                <td> {{row['commision']}}</td>
+                <td>{{row['final']}}</td>
+                 </div>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id = "dcalc">
+    <table id= dashboard >
+        <th>Bazar</th>
+        <th>Client</th>
+        <th>Total</th>
+        <th>TotalPanu</th>
+        <th>TotalAkd</th>
+        <th>Valan</th>
+        <th>Commission</th>
+        <th>Final</th>
+        <tbody>
+            <tr *ngFor="let row of this.clientaccount">
+                <td>{{row['bazar']}}</td>
+                <td>{{row['client_id']}}</td>
+                <td>{{row['total']}}</td>
+                <td>{{row['totalpanu']}}</td>
+                <td>{{row['totalakd']}}</td>
+                <td>{{row['valan']}}</td>
+                <td> {{row['commision']}}</td>
+                <td>{{row['final']}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

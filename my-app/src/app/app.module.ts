@@ -9,7 +9,9 @@ import { DASHBOARDComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientComponent } from './client/client.component';
-import {CreateClientComponent} from './create-client/create-client.component'
+import {CreateClientComponent} from './create-client/create-client.component';
+import { AccountingComponent } from './accounting/accounting.component';
+
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: DASHBOARDComponent },
@@ -17,11 +19,13 @@ const appRoutes: Routes = [
     path: 'login',
     component: LOGINComponent
   },
+  {path: 'account', component : AccountingComponent},
   { path: 'client', component: ClientComponent },
   { path: 'addclient', component: CreateClientComponent },
   { path: '',
   component: LOGINComponent
   }
+
 ];
 
 
@@ -32,7 +36,9 @@ const appRoutes: Routes = [
     LOGINComponent,
     DASHBOARDComponent,
     ClientComponent,
-    CreateClientComponent
+    CreateClientComponent,
+    AccountingComponent,
+   
 
   ],
   imports: [

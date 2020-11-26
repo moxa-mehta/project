@@ -1,0 +1,13 @@
+#dashboard{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 400px;
+    height: 10;
+   
+    
+    }
+#dashboard td,#dashboard th ,#dashboard tr{
+        border: 1px solid black;
+        padding: 8px;
+        width: 55px;
+}

@@ -2,7 +2,7 @@
   <button class="dropbtn"><i class="fa fa-bars"> Menu</i></button>
   <div class="dropdown-content">
     <a href="http://localhost:4200/client">Client</a>
-    <a href="#">Account</a>
+    <a href="http://localhost:4200/account">Account</a>
 
   </div>
 </div>
@@ -82,7 +82,7 @@
       <input [(ngModel)]="code" size="1" />
     </label>
     <label>&nbsp;Number &nbsp;
-      <input [(ngModel)]="number" size="3" />
+      <input [(ngModel)]="number" size="9" />
     </label>
 
 
@@ -108,18 +108,46 @@
       <input [(ngModel)]="client.name" size="1" />
     </label>
     <label> &nbsp;Pana Total &nbsp;
-      <input [(ngModel)]="panatotal" size="3" />
+      <input [(ngModel)]="clienthistory.panu_total" size="3" />
     </label>
     <label>&nbsp; AKD Total &nbsp;
-      <input [(ngModel)]="akdtotal" size="3" />
+      <input [(ngModel)]="clienthistory.akd_total" size="3" />
     </label>
     <label> &nbsp;Total &nbsp;
-      <input [(ngModel)]="total" size="3" />
+      <input [(ngModel)]="clienthistory.total" size="3" /> 
     </label>
 
   </div>
   <div>
-    <button (click)='getAllEmployees()'>Button Click</button>
+    <label> &nbsp;** PanaTotal ** &nbsp;
+      <input [(ngModel)]="overall_pana_total" size="3" />
+    </label>
+    <label>&nbsp; ** AKDTotal ** &nbsp;
+      <input [(ngModel)]="overall_akd_total" size="3" />
+    </label>
+    <label> &nbsp;** Total **&nbsp;
+      <input [(ngModel)]="overall_total" size="3" /> 
+    </label>
+  </div>
+  <div>
+    <label> &nbsp;Pana &nbsp;
+      <input [(ngModel)]="pana" size="3" />
+    </label>
+    <label>&nbsp; AKD &nbsp;
+      <input [(ngModel)]="akd" size="3" />
+    </label>
+    <label>&nbsp; history number &nbsp;
+      <input [(ngModel)]="history_no" size="3" />
+    </label>
+  </div>
+  <div>
+    <button (click) = 'getAllEmployees()'>Button Click</button>
+    <button (click) ='create_account()'> Account</button>
+    <button (click) = 'delete_history()'> Delete  </button>
+    <button (click) = 'reset()'> Reset </button>
+    <button (click) = 'show1()'> Show1 </button>
+    <button (click) = 'show2()' >Show2</button>
+    <button (click) = 'hide()'>Hide</button>
   </div>
 
 </div>

@@ -8,6 +8,7 @@ export class Client {
     akd_rate:number;
     pana_com:number;
     akd_com :number;
+    
 
 
 }
