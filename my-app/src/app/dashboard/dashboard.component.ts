@@ -721,6 +721,15 @@ export class DASHBOARDComponent implements OnInit {
                
             }
           }
+
+          this.httpClient
+      .get("http://127.0.0.1:5002/dashboard/" + this.bazar.bazar_id)
+      .subscribe((data) => {
+        this.dashboarddata = data as JSON;
+
+        console.log(this.dashboarddata);
+      });
+
         //console.log(this.dashboarddata);
       });
     this.httpClient
@@ -753,7 +762,12 @@ export class DASHBOARDComponent implements OnInit {
             //console.log(this.akddata);
           }
         }
-        
+        this.httpClient
+      .get("http://127.0.0.1:5002/akdtable/" + this.bazar.bazar_id)
+      .subscribe((data) => {
+        this.akddata = data as JSON;
+        console.log(this.akddata);
+      });
       });
   }
 
@@ -783,6 +797,9 @@ export class DASHBOARDComponent implements OnInit {
   }
 
   async reset() {
+    this.overall_pana_total = 0;
+    this.overall_total = 0;
+    this.overall_akd_total = 0;
     this.httpClient
       .delete("http://127.0.0.1:5002/deletedashboard", httpOptions)
       .subscribe(
@@ -1379,6 +1396,8 @@ export class DASHBOARDComponent implements OnInit {
       await this.filltable(x1);
       await this.fillakdtable(x2);
     }
+
+    window.location.reload();
   }
   async temp(){
     await this.httpClient
@@ -3417,6 +3436,7 @@ export class DASHBOARDComponent implements OnInit {
                       (data) => {
                         console.log("data receivesd:", data);
                       },
+                      
                       (err) => {
                         console.log("error from backend:", err);
                       }
@@ -6120,7 +6140,20 @@ export class DASHBOARDComponent implements OnInit {
         );
     }
     
+    this.httpClient
+    .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+    .subscribe((data) => {
+      this.clienthistorydata = data as JSON;
+      for(let row of this.clienthistorydata)
+      {
+        this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+        this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
 
+      }
+      this.overall_total = this.overall_pana_total + this.overall_akd_total;
+      //this.history = this.historydata;
+      //console.log(this.historydata);
+    });
     // window.location.reload();
   }
 }
