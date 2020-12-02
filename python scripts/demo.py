@@ -73,8 +73,8 @@ def addclient():
 @app.route("/addhist",methods=['POST'])
 def addhist():
 		_json = request.json
-		sr_no = request['sr_no']
-		client_id=_json['clientid']
+		sr_no = _json['sr_no']
+		client_id=_json['client_id']
 		bazar_id = _json['bazar_id']
 		number = _json['number']
 		bet = _json['bet']

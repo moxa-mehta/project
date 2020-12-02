@@ -64,8 +64,11 @@
   </td>
 
 </table>
-<div>
-  <div><br>
+<div fxLayout="row">
+  <br>
+    
+    <div fxLayout="column">
+      <div>
     <label>BAZAR &nbsp;
       <input (change)="getdashboarddata()" [(ngModel)]="bazar.bazar_id" size="1" />
     </label>
@@ -166,3 +169,4 @@
     </tr>
   </tbody>
 </table>
+</div>

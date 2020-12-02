@@ -7,6 +7,7 @@ import { DASHBOARDComponent } from './dashboard/dashboard.component';
 
 
 import { RouterModule, Routes } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientComponent } from './client/client.component';
 import {CreateClientComponent} from './create-client/create-client.component';
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule, FormsModule,
-    HttpClientModule
+    HttpClientModule,
+   FlexLayoutModule 
     
   ],
   providers: [],

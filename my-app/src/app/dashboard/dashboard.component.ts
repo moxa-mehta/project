@@ -54,6 +54,7 @@ export class DASHBOARDComponent implements OnInit {
 
   }
   @Input() bet: number;
+  @Input() bet2 : number;
   @Input() bet1: number;
   @Input() code: string;
   @Input() number: string;
@@ -1661,16 +1662,18 @@ export class DASHBOARDComponent implements OnInit {
             var i = this.head.indexOf(column);
             var j = this.tail[i];
             if (row[j] == 0) {
+              this.bet2 = this.bet1
+
             } else {
               //console.log("row of j",+row[j], typeof(+row[j]));
-              this.bet = +this.bet + +row[j];
+              this.bet2 = +this.bet1 + +row[j];
             }
 
             this.demo = {
               code1: column,
               number: this.number,
               code2: j,
-              bet: this.bet,
+              bet: this.bet2,
             };
             this.httpClient
               .put(
@@ -1819,12 +1822,13 @@ export class DASHBOARDComponent implements OnInit {
                     );
             this.globalc = this.globalc + 1;
             if (row["data"] == 0) {
+              this.bet2 = this.bet1;
             } else {
               //console.log("row of j",+row[j], typeof(+row[j]));
-              this.bet = +this.bet1 + +row["data"];
+              this.bet2 = +this.bet1 + +row["data"];
             }
 
-            this.demo = { akd: row["akd"], data: this.bet };
+            this.demo = { akd: row["akd"], data: this.bet2 };
             this.httpClient
               .put(
                 "http://127.0.0.1:5002/updateakdbet/" + this.bazar.bazar_id,
@@ -1945,7 +1949,7 @@ export class DASHBOARDComponent implements OnInit {
         );
     } else if (this.code == "3") {
       this.bet1 = this.bet;
-      console.log(this.bet1);
+      //console.log(this.bet1);
       this.globalc = 0;
       //for (let row of this.dashboarddata) {
       await this.asyncForEach(this.dashboarddata, async (row) => {
@@ -1969,6 +1973,7 @@ export class DASHBOARDComponent implements OnInit {
             this.individualhist.number = row[column];
             this.individualhist.bet = this.bet1;
             this.individualhist.type = row["type"]
+            console.log(this.individualhist)
             this.httpClient
                     .post(
                       "http://127.0.0.1:5002/addhist",
@@ -1987,16 +1992,17 @@ export class DASHBOARDComponent implements OnInit {
             var i = this.head.indexOf(column);
             var j = this.tail[i];
             if (row[j] == 0) {
+              this.bet2 = this.bet1;
             } else {
               //console.log("row of j",+row[j], typeof(+row[j]));
-              this.bet = +this.bet1 + +row[j];
+              this.bet2 = +this.bet1 + +row[j];
             }
 
             this.demo = {
               code1: column,
               number: row[column],
               code2: j,
-              bet: this.bet,
+              bet: this.bet2,
             };
             this.httpClient
               .put(
@@ -2149,16 +2155,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
               if (row[result] == 0) {
+                this.bet2 = this.bet1
               } else {
                 //console.log("row of j",+row[j], typeof(+row[j]));
-                this.bet = +this.bet1 + +row[result];
+                this.bet2 = +this.bet1 + +row[result];
               }
 
               this.demo = {
                 code1: this.number,
                 number: row[this.number],
                 code2: result,
-                bet: this.bet,
+                bet: this.bet2,
               };
               this.httpClient
                 .put(
@@ -2325,16 +2332,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
               if (row[result] == 0) {
+                this.bet2 = this.bet1;
               } else {
                 //console.log("row of j",+row[j], typeof(+row[j]));
-                this.bet = +this.bet1 + +row[result];
+                this.bet2 = +this.bet1 + +row[result];
               }
 
               this.demo = {
                 code1: this.number,
                 number: row[this.number],
                 code2: result,
-                bet: this.bet,
+                bet: this.bet2,
               };
               this.httpClient
                 .put(
@@ -2503,16 +2511,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row[result] == 0) {
+            this.bet2 = this.bet1
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row[result];
+            this.bet2 = +this.bet1 + +row[result];
           }
 
           this.demo = {
             code1: this.number,
             number: row[this.number],
             code2: result,
-            bet: this.bet,
+            bet: this.bet2,
           };
           this.httpClient
             .put(
@@ -2678,16 +2687,17 @@ export class DASHBOARDComponent implements OnInit {
             var i = this.head.indexOf(column);
             var j = this.tail[i];
             if (row[j] == 0) {
+              this.bet2 = this.bet1
             } else {
               //console.log("row of j",+row[j], typeof(+row[j]));
-              this.bet = +this.bet1 + +row[j];
+              this.bet2 = +this.bet1 + +row[j];
             }
 
             this.demo = {
               code1: column,
               number: row[column],
               code2: j,
-              bet: this.bet,
+              bet: this.bet2,
             };
             this.httpClient
               .put(
@@ -2870,16 +2880,17 @@ export class DASHBOARDComponent implements OnInit {
               var i = this.head.indexOf(column);
               var j = this.tail[i];
               if (row[j] == 0) {
+                this.bet2 = this.bet1;
               } else {
                 //console.log("row of j",+row[j], typeof(+row[j]));
-                this.bet = +this.bet1 + +row[j];
+                this.bet2 = +this.bet1 + +row[j];
               }
 
               this.demo = {
                 code1: column,
                 number: row[column],
                 code2: j,
-                bet: this.bet,
+                bet: this.bet2,
               };
               this.httpClient
                 .put(
@@ -3061,9 +3072,10 @@ export class DASHBOARDComponent implements OnInit {
               var i = this.head.indexOf(column);
               var j = this.tail[i];
               if (row[j] == 0) {
+                this.bet2 = this.bet1;
               } else {
                 //console.log("row of j",+row[j], typeof(+row[j]));
-                this.bet = +this.bet1 + +row[j];
+                this.bet2 = +this.bet1 + +row[j];
               }
 
               this.demo = {
@@ -3252,16 +3264,17 @@ export class DASHBOARDComponent implements OnInit {
               var i = this.head.indexOf(column);
               var j = this.tail[i];
               if (row[j] == 0) {
+                this.bet2 = this.bet1;
               } else {
                 //console.log("row of j",+row[j], typeof(+row[j]));
-                this.bet = +this.bet1 + +row[j];
+                this.bet2 = +this.bet1 + +row[j];
               }
 
               this.demo = {
                 code1: column,
                 number: row[column],
                 code2: j,
-                bet: this.bet,
+                bet: this.bet2,
               };
               this.httpClient
                 .put(
@@ -3444,16 +3457,17 @@ export class DASHBOARDComponent implements OnInit {
               var i = this.head.indexOf(column);
               var j = this.tail[i];
               if (row[j] == 0) {
+                this.bet2 = this.bet1
               } else {
                 //console.log("row of j",+row[j], typeof(+row[j]));
-                this.bet = +this.bet1 + +row[j];
+                this.bet2 = +this.bet1 + +row[j];
               }
 
               this.demo = {
                 code1: column,
                 number: row[column],
                 code2: j,
-                bet: this.bet,
+                bet: this.bet2,
               };
               this.httpClient
                 .put(
@@ -3624,16 +3638,17 @@ export class DASHBOARDComponent implements OnInit {
               var i = this.head.indexOf(column);
               var j = this.tail[i];
               if (row[j] == 0) {
+                this.bet2 = this.bet1
               } else {
                 //console.log("row of j",+row[j], typeof(+row[j]));
-                this.bet = +this.bet1 + +row[j];
+                this.bet2 = +this.bet1 + +row[j];
               }
 
               this.demo = {
                 code1: column,
                 number: row[column],
                 code2: j,
-                bet: this.bet,
+                bet: this.bet2,
               };
               this.httpClient
                 .put(
@@ -3802,16 +3817,17 @@ export class DASHBOARDComponent implements OnInit {
             var i = this.head.indexOf(column);
             var j = this.tail[i];
             if (row[j] == 0) {
+              this.bet2 = this.bet1
             } else {
               //console.log("row of j",+row[j], typeof(+row[j]));
-              this.bet = +this.bet1 + +row[j];
+              this.bet2 = +this.bet1 + +row[j];
             }
 
             this.demo = {
               code1: column,
               number: row[column],
               code2: j,
-              bet: this.bet,
+              bet: this.bet2,
             };
             this.httpClient
               .put(
@@ -3957,16 +3973,17 @@ export class DASHBOARDComponent implements OnInit {
             var i = this.head.indexOf(column);
             var j = this.tail[i];
             if (row[j] == 0) {
+              this.bet2 = this.bet1
             } else {
               //console.log("row of j",+row[j], typeof(+row[j]));
-              this.bet = +this.bet1 + +row[j];
+              this.bet2 = +this.bet1 + +row[j];
             }
 
             this.demo = {
               code1: column,
               number: row[column],
               code2: j,
-              bet: this.bet,
+              bet: this.bet2,
             };
             this.httpClient
               .put(
@@ -4132,9 +4149,10 @@ export class DASHBOARDComponent implements OnInit {
             var i = this.head.indexOf(column);
             var j = this.tail[i];
             if (row[j] == 0) {
+              this.bet2 = this.bet1
             } else {
               //console.log("row of j",+row[j], typeof(+row[j]));
-              this.bet = +this.bet1 + +row[j];
+              this.bet2 = +this.bet1 + +row[j];
             }
 
             this.demo = {
@@ -4304,9 +4322,10 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row["01"] == 0) {
+            this.bet2 = this.bet1;
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["01"];
+            this.bet2 = +this.bet1 + +row["01"];
           }
 
           this.demo = {
@@ -4474,16 +4493,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row["02"] == 0) {
+            this.bet2 = this.bet1;
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["01"];
+            this.bet2 = +this.bet1 + +row["01"];
           }
 
           this.demo = {
             code1: "2",
             number: row["2"],
             code2: "02",
-            bet: this.bet,
+            bet: this.bet2,
           };
           this.httpClient
             .put(
@@ -4625,16 +4645,17 @@ export class DASHBOARDComponent implements OnInit {
         if (row["3"].includes(this.number)) {
           this.globalc = this.globalc + 1;
           if (row["03"] == 0) {
+            this.bet2 = this.bet1;
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["03"];
+            this.bet2 = +this.bet1 + +row["03"];
           }
 
           this.demo = {
             code1: "3",
             number: row["3"],
             code2: "03",
-            bet: this.bet,
+            bet: this.bet2,
           };
           this.httpClient
             .put(
@@ -4796,16 +4817,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row["04"] == 0) {
+            this.bet2 = this.bet1;
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["04"];
+            this.bet2 = +this.bet1 + +row["04"];
           }
 
           this.demo = {
             code1: "4",
             number: row["4"],
             code2: "04",
-            bet: this.bet,
+            bet: this.bet2,
           };
           this.httpClient
             .put(
@@ -4966,16 +4988,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
               if (row["05"] == 0) {
+                this.bet2 = this.bet1
               } else {
                 //console.log("row of j",+row[j], typeof(+row[j]));
-                this.bet = +this.bet1 + +row["05"];
+                this.bet2 = +this.bet1 + +row["05"];
               }
     
               this.demo = {
                 code1: "5",
                 number: row["5"],
                 code2: "05",
-                bet: this.bet,
+                bet: this.bet2,
               };
               this.httpClient
                 .put(
@@ -5137,9 +5160,10 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row["06"] == 0) {
+            this.bet2 = this.bet1;
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["06"];
+            this.bet2 = +this.bet1 + +row["06"];
           }
 
           this.demo = {
@@ -5308,16 +5332,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row["08"] == 0) {
+            this.bet2 = this.bet1
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["08"];
+            this.bet2 = +this.bet1 + +row["08"];
           }
 
           this.demo = {
             code1: "8",
             number: row["8"],
             code2: "08",
-            bet: this.bet,
+            bet: this.bet2,
           };
           this.httpClient
             .put(
@@ -5479,16 +5504,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row["07"] == 0) {
+            this.bet2 = this.bet1
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["07"];
+            this.bet2 = +this.bet1 + +row["07"];
           }
 
           this.demo = {
             code1: "7",
             number: row["7"],
             code2: "07",
-            bet: this.bet,
+            bet: this.bet2,
           };
           this.httpClient
             .put(
@@ -5650,9 +5676,10 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row["09"] == 0) {
+            this.bet2 = this.bet1
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["09"];
+            this.bet2 = +this.bet1 + +row["09"];
           }
 
           this.demo = {
@@ -5821,16 +5848,17 @@ export class DASHBOARDComponent implements OnInit {
                       }
                     );
           if (row["010"] == 0) {
+            this.bet2 = this.bet1
           } else {
             //console.log("row of j",+row[j], typeof(+row[j]));
-            this.bet = +this.bet1 + +row["010"];
+            this.bet2 = +this.bet1 + +row["010"];
           }
 
           this.demo = {
             code1: "10",
             number: row["10"],
             code2: "010",
-            bet: this.bet,
+            bet: this.bet2,
           };
           this.httpClient
             .put(
@@ -5994,16 +6022,17 @@ export class DASHBOARDComponent implements OnInit {
             var i = this.head.indexOf(column);
             var j = this.tail[i];
             if (row[j] == 0) {
+              this.bet2 = this.bet1
             } else {
               //console.log("row of j",+row[j], typeof(+row[j]));
-              this.bet = +this.bet1 + +row[j];
+              this.bet2 = +this.bet1 + +row[j];
             }
 
             this.demo = {
               code1: column,
               number: row[column],
               code2: j,
-              bet: this.bet,
+              bet: this.bet2,
             };
             this.httpClient
               .put(
