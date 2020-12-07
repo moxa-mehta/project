@@ -79,7 +79,7 @@ def addhist():
 		number = _json['number']
 		bet = _json['bet']
 		type =_json['type']
-		id = mongo.db.individualhist.insert({'sr_no':sr_no,'client_id':client_id,'bazar_id':bazar_id,'number':number,'bet':bet})
+		id = mongo.db.individualhist.insert({'sr_no':sr_no,'client_id':client_id,'bazar_id':bazar_id,'number':number,'bet':bet,'type' : type})
 		return jsonify({'text':'moxa!'})
 @app.route("/addclienthistory",methods=['POST'])
 def addclienthistory():
@@ -292,6 +292,18 @@ def deleteakdtable():
 @app.route("/deletetable",methods=['DELETE'])
 def deletetable():
 		id = mongo.db.clienthistory.delete_many({})
+		return jsonify({'text':'moxa!'})
+@app.route("/deleteindividualhist",methods=['DELETE'])
+def deleteindividualhist():
+		id = mongo.db.individualhist.delete_many({})
+		return jsonify({'text':'moxa!'})
+@app.route("/deleteaccount",methods=['DELETE'])
+def deleteaccount():
+		id = mongo.db.account.delete_many({})
+		return jsonify({'text':'moxa!'})
+@app.route("/deletedatelist",methods=['DELETE'])
+def deletedatelist():
+		id = mongo.db.datelist.delete_many({})
 		return jsonify({'text':'moxa!'})
 
 

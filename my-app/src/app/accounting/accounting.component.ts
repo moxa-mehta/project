@@ -70,6 +70,7 @@ getclientdata(){
 getbazardata(){
   this.httpClient.get('http://127.0.0.1:5002/getbazaraccount/'+this.bazar+'/'+this.dropdown).subscribe(data => {
     this.clientaccount= data as JSON;
+    
   
 
     })

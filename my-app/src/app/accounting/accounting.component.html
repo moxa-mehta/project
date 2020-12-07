@@ -1,9 +1,8 @@
-<div>
-Date :
-<select name="date" id="date" [(ngModel)] = "dropdown" 
-#mySelect (change)='onOptionsSelected(mySelect.value)'>
-    <option  *ngFor="let row of datedata" value="{{row}}">{{row}}</option>
-  </select>
+<div style="margin: 20px;">
+    Date :
+    <select name="date" id="date" [(ngModel)]="dropdown" #mySelect (change)='onOptionsSelected(mySelect.value)'>
+        <option *ngFor="let row of datedata" value="{{row}}">{{row}}</option>
+    </select>
 </div>
 
 
@@ -12,24 +11,53 @@ Date :
 
 
 
-<div>
-    <label>Client &nbsp; 
-        <input [(ngModel)] = "client"  size = "2"> 
+<div style="margin: 20px;">
+    <label>Client &nbsp;
+        <input [(ngModel)]="client" size="2">
     </label>
     <label> &nbsp; Bazar &nbsp;
-        <input [(ngModel)] = "bazar" size ="2"> 
+        <input [(ngModel)]="bazar" size="2">
     </label>
 </div>
+<div style="margin: 20px;">
+    <button class="btn btn-primary" style="margin-right: 25px;" (click)='getclientdata()'>Client Data</button>
+    <button class="btn btn-primary" style="margin-right: 25px;" (click)='getbazardata()'>Bazar Data</button>
+    <button class="btn btn-primary" style="margin-right: 25px;" (click)='getclientday()'>Client Data for a day</button>
+    <button class="btn btn-primary" style="margin-right: 25px;" (click)='getclientoverall()'>Selected Client Overall</button>
+    <!-- <button style="margin-right: 25px;">All Client Overall</button> -->
+</div>
+<div fxLayout="row">
+    <div>
+<div id="dcalc">
+    <table id=dashboard style="margin-right: 25px; margin-left: 20px;">
+        <th>Bazar</th>
+        <th>Client</th>
+        <th>Total</th>
+        <th>TotalPanu</th>
+        <th>TotalAkd</th>
+        <th>Valan</th>
+        <th>Commission</th>
+        <th>Final</th>
+        <tbody>
+            <tr *ngFor="let row of this.clientaccount">
+                <!-- <div *ngIf="row['final'] >= 0">  -->
+                    <td *ngIf="row['final'] >= 0">{{row['bazar']}}</td>
+                    <td *ngIf="row['final'] >= 0">{{row['client_id']}}</td>
+                    <td *ngIf="row['final'] >= 0">{{row['total']}}</td>
+                    <td *ngIf="row['final'] >= 0">{{row['totalpanu']}}</td>
+                    <td *ngIf="row['final'] >= 0">{{row['totalakd']}}</td>
+                    <td *ngIf="row['final'] >= 0">{{row['valan']}}</td>
+                    <td *ngIf="row['final'] >= 0"> {{row['commision']}}</td>
+                    <td *ngIf="row['final'] >= 0">{{row['final']}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
 <div>
-<button (click)='getclientdata()'>Client Data</button>
-<button (click)='getbazardata()'>Bazar Data</button>
-<button (click)='getclientday()'>Client Data for a day</button>
-<button (click)='getclientoverall()'>Selected Client Overall</button>
-<button>All Client Overall</button>
-</div>
-
-<div id = "dcalc">
-    <table id= dashboard >
+<div id="dcalc">
+    <table id=dashboard>
         <th>Bazar</th>
         <th>Client</th>
         <th>Total</th>
@@ -40,42 +68,19 @@ Date :
         <th>Final</th>
         <tbody>
             <tr *ngFor="let row of this.clientaccount">
-                <div *ngIf = "row['final'] >= 0">
-                <td>{{row['bazar']}}</td>
-                <td>{{row['client_id']}}</td>
-                <td>{{row['total']}}</td>
-                <td>{{row['totalpanu']}}</td>
-                <td>{{row['totalakd']}}</td>
-                <td>{{row['valan']}}</td>
-                <td> {{row['commision']}}</td>
-                <td>{{row['final']}}</td>
-                 </div>
+                <!-- <div *ngIf="row['final'] < 0"> -->
+                <td *ngIf="row['final'] < 0">{{row['bazar']}}</td>
+                <td *ngIf="row['final'] < 0">{{row['client_id']}}</td>
+                <td *ngIf="row['final'] < 0">{{row['total']}}</td>
+                <td *ngIf="row['final'] < 0">{{row['totalpanu']}}</td>
+                <td *ngIf="row['final'] < 0">{{row['totalakd']}}</td>
+                <td *ngIf="row['final'] < 0">{{row['valan']}}</td>
+                <td *ngIf="row['final'] < 0"> {{row['commision']}}</td>
+                <td *ngIf="row['final'] < 0">{{row['final']}}</td>
+                <!-- </div> -->
             </tr>
         </tbody>
     </table>
+    </div>
 </div>
-<div id = "dcalc">
-    <table id= dashboard >
-        <th>Bazar</th>
-        <th>Client</th>
-        <th>Total</th>
-        <th>TotalPanu</th>
-        <th>TotalAkd</th>
-        <th>Valan</th>
-        <th>Commission</th>
-        <th>Final</th>
-        <tbody>
-            <tr *ngFor="let row of this.clientaccount">
-                <td>{{row['bazar']}}</td>
-                <td>{{row['client_id']}}</td>
-                <td>{{row['total']}}</td>
-                <td>{{row['totalpanu']}}</td>
-                <td>{{row['totalakd']}}</td>
-                <td>{{row['valan']}}</td>
-                <td> {{row['commision']}}</td>
-                <td>{{row['final']}}</td>
-            </tr>
-        </tbody>
-    </table>
 </div>
-
