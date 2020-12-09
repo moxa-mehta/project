@@ -151,12 +151,16 @@
   <label>&nbsp; AKD &nbsp;
     <input [(ngModel)]="akd" size="3" />
   </label>
-  <label> history number &nbsp;
-    <input [(ngModel)]="history_no" size="3" />
-  </label>
+  
 </div>
   <div>
     <button (click) ='create_account()'> Account</button>
+
+  </div>
+  <div>
+    <label> history number &nbsp;
+      <input [(ngModel)]="history_no" size="3" />
+    </label>
     <button (click) = 'delete_history()'> Delete  </button>
     <button (click) = 'reset()'> Reset </button>
  </div>

@@ -22,7 +22,6 @@ def hello():
 def demo():
 		_json = request.json
 		_name = _json['name']
-		
 		id = mongo.db.user.insert({'name': _name})
 		return jsonify({'text':'Hello!'})
 @app.route("/addaccount",methods=['POST'])
@@ -35,9 +34,10 @@ def addaccount():
 		totalakd = _json['totalakd']
 		valan = _json['valan']
 		final = _json['final']
+		commission = _json['commission']
 		date = _json['date']
 		id = mongo.db.account.insert({'bazar': bazar ,'client_id' : client_id ,'total' : total ,'totalpanu' :totalpanu ,'totalakd' : totalakd ,
-		'valan' : valan ,'final' :final , 'date' : date})
+		'valan' : valan ,'final' :final , 'date' : date , 'commission' : commission})
 		return jsonify({'text':'moxa!'})
 @app.route("/adddatelist",methods=['POST'])
 def adddatelist():
@@ -231,6 +231,12 @@ def getclientdata(client_id):
 @app.route('/gethist/<client_id>',methods=['GET'])
 def gethist(client_id):
 		user=mongo.db.individualhist.find({'client_id':client_id})
+		resp = dumps(user)
+		return resp
+@app.route('/gethistdel/<sr_no>',methods=['GET'])
+def gethistdel(sr_no):
+		sr = int(sr_no)
+		user=mongo.db.individualhist.find({'sr_no':sr})
 		resp = dumps(user)
 		return resp
 @app.route('/getdatelist',methods=['GET'])

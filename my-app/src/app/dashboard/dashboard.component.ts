@@ -91,6 +91,7 @@ export class DASHBOARDComponent implements OnInit {
   total: number = 0;
   clientstatistics: any;
   historydata: any;
+  historydel : any;
   demo: any;
   globalc: number = 0;
   updatedata: JSON;
@@ -1441,16 +1442,65 @@ export class DASHBOARDComponent implements OnInit {
   }
 
   async delete_history(){
+  var bet1 ;
 
+  console.log(this.history_no)
     this.httpClient
-              .get("http://127.0.0.1:5002/history/" + this.bazar.bazar_id)
-              .subscribe((data) => {
-                this.historydata = data as JSON;
+              .get("http://127.0.0.1:5002/gethistdel/" +  this.history_no)
+              .subscribe(async (data) => {
+                this.historydel = data as JSON;
+                console.log("this" +this.historydel)
                 //this.history = this.historydata;
-                for( let hd of this.historydata){
-                  if(hd['sr_no'] == this.history_no){
+                for( let hd of this.historydel){
+                  if(hd['type'] == 'A'){
 
                     
+                  }
+                  else{
+
+                    await this.asyncForEach(this.dashboarddata, async (row) => {
+                      this.asyncForEach(this.head, async (column) => {
+                        if(row[column] == hd['number'])
+                        {
+                          var i = this.head.indexOf(column);
+                          var j = this.tail[i];
+                          bet1 = +row[j] - +hd['bet'];
+
+                          this.demo = {
+                            code1: column,
+                            number: row[column],
+                            code2: j,
+                            bet: bet1,
+                          };
+                          this.httpClient
+                            .put(
+                              "http://127.0.0.1:5002/updatebet/" + this.bazar.bazar_id,
+                              this.demo,
+                              httpOptions
+                            )
+                            .subscribe(
+                              (data) => {
+                                console.log("data receivesd:", data);
+                                this.httpClient
+                                  .get(
+                                    "http://127.0.0.1:5002/dashboard/" + this.bazar.bazar_id
+                                  )
+                                  .subscribe((data) => {
+                                    this.dashboarddata = data as JSON;
+                                    console.log(data);
+                                    console.log(this.dashboarddata);
+                                  });
+                              },
+                              (err) => {
+                                console.log("error from backend:", err);
+                              }
+                            );
+
+                        }
+          
+                      })
+                    })
+
                   }
                 }
               });
@@ -1656,19 +1706,19 @@ export class DASHBOARDComponent implements OnInit {
         if (row["number"] == this.pana && row["type"] == "S") {
           console.log("yo yo yo")
           this.totalpanu = +row["bet"] + +this.totalpanu;
-          this.account.valan = this.account.valan + this.totalpanu * row1['sp_rate'] 
+          this.account.valan = +this.account.valan + +this.totalpanu * +row1['sp_rate'] 
         }
         if (row["number"] == this.pana && row["type"] == "D") {
           this.totalpanu = +row["bet"] + +this.totalpanu;
-          this.account.valan = this.account.valan + this.totalpanu * row1['dp_rate'] 
+          this.account.valan = +this.account.valan + +this.totalpanu * +row1['dp_rate'] 
         }
         if (row["number"] == this.pana && row["type"] == "T") {
           this.totalpanu = +row["bet"] + +this.totalpanu;
-          this.account.valan = this.account.valan + this.totalpanu * row1['tp_rate'] 
+          this.account.valan = +this.account.valan + +this.totalpanu * +row1['tp_rate'] 
         }
         if (row["number"] == this.akd && row["type"] == "A") {
           this.totalakd = +row["bet"] + +this.totalakd;
-          this.account.valan = this.account.valan + this.totalpanu * row1['sp_rate'] 
+          this.account.valan = +this.account.valan + +this.totalakd * +row1['akd_rate'] 
         }
         if(cc == leng){
           // if (this.totalakd == 0 && this.totalpanu == 0) {
@@ -1954,13 +2004,14 @@ export class DASHBOARDComponent implements OnInit {
                     )
                     .subscribe(
                       (data) => {
+                        
                         console.log("data receivesd:", data);
                       },
                       (err) => {
                         console.log("error from backend:", err);
                       }
                     );
-            this.globalc = this.globalc + 1;
+                    this.globalc = this.globalc + 1;
             if (row["data"] == 0) {
               this.bet2 = this.bet1;
             } else {
@@ -2016,7 +2067,7 @@ export class DASHBOARDComponent implements OnInit {
             this.clienthistory.bazar_id = this.clienthistoryj[0].bazar_id;
 
             this.panatotal = +this.clienthistory.panu_total;
-            this.akdtotal = this.clienthistory.akd_total + +this.bet1;
+            this.akdtotal = this.clienthistory.akd_total + +akd_total;
             this.total = this.akdtotal + this.panatotal;
             this.clientstatistics = {
               pana_total: this.panatotal,
@@ -2035,12 +2086,7 @@ export class DASHBOARDComponent implements OnInit {
               .subscribe(
                 (data) => {
                   console.log("data received:", data);
-                },
-                (err) => {
-                  console.log("error from backend:", err);
-                }
-              );
-              this.httpClient
+                  this.httpClient
               .get(
                 "http://127.0.0.1:5002/getclienthistory/" +
                   this.client.clientid +
@@ -2053,11 +2099,13 @@ export class DASHBOARDComponent implements OnInit {
                 this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
                 this.clienthistory.total = this.clienthistoryj[0].total;
               }); 
-                  this.overall_akd_total = +this.overall_akd_total + +this.bet1 
-          
-                
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                  
+                },
+                (err) => {
+                  console.log("error from backend:", err);
+                }
+              );
+              
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -2093,7 +2141,11 @@ export class DASHBOARDComponent implements OnInit {
               });
           }
         });
-
+        this.overall_akd_total = +this.overall_akd_total + +akd_total 
+          
+                
+                //console.log("yes"+this.overall_pana_total)
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
       this.history.client_id = this.client.clientid;
       this.history.bet = this.bet1;
       this.history.bet_total = this.bet1 * this.globalc;
@@ -2346,7 +2398,7 @@ export class DASHBOARDComponent implements OnInit {
           }
         );
     } else if (this.code == "7") {
-      var result = "0" + this.number;
+     
       this.globalc = 0;
       this.bet1 = this.bet;
       await this.asyncForEach(this.dashboarddata, async (row) => {
@@ -2355,6 +2407,7 @@ export class DASHBOARDComponent implements OnInit {
           var arr = this.number.split("", l);
           for (let x of arr) {
             if (row["type"] == "S" && column == x) {
+              var result = "0" + x;
               this.globalc = this.globalc + 1;
               this.individualhist.client_id = this.client.clientid
             this.individualhist.sr_no = +this.history.sr_no + 1;
@@ -2376,6 +2429,7 @@ export class DASHBOARDComponent implements OnInit {
                         console.log("error from backend:", err);
                       }
                     );
+                    
               if (row[result] == 0) {
                 this.bet2 = this.bet1
               } else {
@@ -2384,8 +2438,8 @@ export class DASHBOARDComponent implements OnInit {
               }
 
               this.demo = {
-                code1: this.number,
-                number: row[this.number],
+                code1: x,
+                number: row[x],
                 code2: result,
                 bet: this.bet2,
               };
