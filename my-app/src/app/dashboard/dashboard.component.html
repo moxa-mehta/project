@@ -44,7 +44,7 @@
   </td>
   <td>
     <table id=dashboard>
-      <tr>
+      <tr >
         <th *ngFor="let column of akdheaders">{{column}} </th>
       </tr>
 
@@ -54,8 +54,12 @@
         <tr *ngFor="let row of akddata">
 
           <td *ngFor="let column of aheaders">
+            <div *ngIf="row[column]> akd_limit  && column == 'data'; else elseBlock" style="background-color: red;">
             {{row[column]}}
-
+          </div>
+          <ng-template #elseBlock>
+            {{row[column]}}
+          </ng-template>
           </td>
 
         </tr>
@@ -155,6 +159,8 @@
 </div>
   <div>
     <button (click) ='create_account()'> Account</button>
+
+    <p id="fire"> </p>
 
   </div>
   <div>

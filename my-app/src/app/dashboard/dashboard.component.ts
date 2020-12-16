@@ -1654,15 +1654,20 @@ export class DASHBOARDComponent implements OnInit {
         this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
         this.clienthistory.total = this.clienthistoryj[0].total;
       });
+      (document.getElementById('b') as HTMLInputElement).setSelectionRange(0,10);
       document.getElementById('b').focus()
   }
   change_code(){
+    (document.getElementById('c') as HTMLInputElement).setSelectionRange(0,10);
     document.getElementById('c').focus() 
+
   }
   change_number(){
+    (document.getElementById('d') as HTMLInputElement).setSelectionRange(0,10);
     document.getElementById('d').focus() 
   }
   change_client(){
+    (document.getElementById('a') as HTMLInputElement).setSelectionRange(0,10);
     document.getElementById('a').focus() 
   }
   async create_account() {
@@ -1686,10 +1691,13 @@ export class DASHBOARDComponent implements OnInit {
     await this.httpClient.get("http://127.0.0.1:5002/clients").subscribe(async (data) => {
       this.clients_data = data as JSON;
       console.log(this.clients_data)
+      
       await this.asyncForEach(this.clients_data, async (row1) => {
-     
+        var ocean = 0
         this.totalpanu = 0;
         this.totalakd = 0;
+        var tpanu = 0;
+        var takd = 0;
          await this.httpClient
     .get("http://127.0.0.1:5002/gethist/" + row1['client_id'])
     .subscribe(async (cdata) => {
@@ -1700,9 +1708,15 @@ export class DASHBOARDComponent implements OnInit {
       await this.asyncForEach(this.individualhistdata, async (row) => {
         cc = cc + 1;
       //for (let row of this.individualhistdata) {
-        console.log(row["number"])
-        console.log(this.pana)
-        console.log(row["type"])
+        ocean = +ocean + +row["bet"]
+        if(row["type"] == "S" || row["type"] == "D" || row["type"] == "T")
+        {
+          tpanu = +tpanu + +row["bet"]
+        }
+        if(row['type'] == 'A')
+        {
+          takd = +takd + +row["bet"]
+        }
         if (row["number"] == this.pana && row["type"] == "S") {
           console.log("yo yo yo")
           this.totalpanu = +row["bet"] + +this.totalpanu;
@@ -1731,9 +1745,9 @@ export class DASHBOARDComponent implements OnInit {
             this.account.totalakd = this.totalakd;
             this.account.client = row1["client_id"];
             this.account.bazar = this.bazar.bazar_id;
-            this.account.total = this.overall_total;
+            this.account.total = ocean;
            
-            this.account.commission = ((this.overall_pana_total * row1['pana_com'] + this.overall_akd_total * row1['akd_com']) / 100) 
+            this.account.commission = (((+tpanu * +row1['pana_com'] )+ (+takd * +row1['akd_com'])) / 100) 
             this.account.final = +this.account.total - +this.account.valan - +this.account.commission;
             console.log(this.account)
             this.httpClient
@@ -1745,7 +1759,7 @@ export class DASHBOARDComponent implements OnInit {
                 (err) => {
                   console.log("error from backend:", err);
                 }
-              );0
+              );
           }
         //}
                
@@ -1755,6 +1769,7 @@ export class DASHBOARDComponent implements OnInit {
         
       })
     });
+    document.getElementById("fire").innerHTML = "Account Created";
   }
 
   async asyncForEach(array, callback) {
@@ -2296,12 +2311,7 @@ export class DASHBOARDComponent implements OnInit {
               .subscribe(
                 (data) => {
                   console.log("data received:", data);
-                },
-                (err) => {
-                  console.log("error from backend:", err);
-                }
-              );
-              this.httpClient
+                  this.httpClient
               .get(
                 "http://127.0.0.1:5002/getclienthistory/" +
                   this.client.clientid +
@@ -2314,6 +2324,12 @@ export class DASHBOARDComponent implements OnInit {
                 this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
                 this.clienthistory.total = this.clienthistoryj[0].total;
               });
+              
+                },
+                (err) => {
+                  console.log("error from backend:", err);
+                }
+              );
               
               
                   this.overall_pana_total = +this.overall_pana_total + +pana_total 
@@ -2341,12 +2357,7 @@ export class DASHBOARDComponent implements OnInit {
               .subscribe(
                 (data) => {
                   console.log("data receivesd:", data);
-                },
-                (err) => {
-                  console.log("error from backend:", err);
-                }
-              );
-              this.httpClient
+                  this.httpClient
               .get(
                 "http://127.0.0.1:5002/getclienthistory/" +
                   this.client.clientid +
@@ -2359,6 +2370,12 @@ export class DASHBOARDComponent implements OnInit {
                 this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
                 this.clienthistory.total = this.clienthistoryj[0].total;
               });
+              
+                },
+                (err) => {
+                  console.log("error from backend:", err);
+                }
+              );
               
               
               this.overall_pana_total = +this.overall_pana_total + +pana_total 
@@ -6817,5 +6834,10 @@ export class DASHBOARDComponent implements OnInit {
     // }
     
     // window.location.reload();
+    (document.getElementById('b') as HTMLInputElement).setSelectionRange(0,10);
+    document.getElementById('b').focus() 
+
   }
+
+ 
 }

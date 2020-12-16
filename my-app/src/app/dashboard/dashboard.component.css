@@ -9,12 +9,15 @@
 #history {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 400px;
-  height: 10;
+  width: 480px;
+  height: 200px;
+  overflow-y:scroll;
+  display:block;
 }
 #history td,#history th ,#history tr{
   border: 1px solid black;
   padding: 8px;
+  
   
   
 

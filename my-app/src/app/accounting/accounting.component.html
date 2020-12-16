@@ -1,3 +1,12 @@
+<div class="dropdown">
+    <button class="dropbtn"><i class="fa fa-bars"> Menu</i></button>
+    <div class="dropdown-content">
+     <a href="http://localhost:4200/dashboard">Dashboard</a>
+      <a href="http://localhost:4200/client">Client</a>
+      
+  
+    </div>
+</div>
 <div style="margin: 20px;">
     Date :
     <select name="date" id="date" [(ngModel)]="dropdown" #mySelect (change)='onOptionsSelected(mySelect.value)'>
@@ -47,7 +56,7 @@
                     <td *ngIf="row['final'] >= 0">{{row['totalpanu']}}</td>
                     <td *ngIf="row['final'] >= 0">{{row['totalakd']}}</td>
                     <td *ngIf="row['final'] >= 0">{{row['valan']}}</td>
-                    <td *ngIf="row['final'] >= 0"> {{row['commision']}}</td>
+                    <td *ngIf="row['final'] >= 0"> {{row['commission']}}</td>
                     <td *ngIf="row['final'] >= 0">{{row['final']}}</td>
                 
             </tr>
@@ -75,7 +84,7 @@
                 <td *ngIf="row['final'] < 0">{{row['totalpanu']}}</td>
                 <td *ngIf="row['final'] < 0">{{row['totalakd']}}</td>
                 <td *ngIf="row['final'] < 0">{{row['valan']}}</td>
-                <td *ngIf="row['final'] < 0"> {{row['commision']}}</td>
+                <td *ngIf="row['final'] < 0"> {{row['commission']}}</td>
                 <td *ngIf="row['final'] < 0">{{row['final']}}</td>
                 <!-- </div> -->
             </tr>
