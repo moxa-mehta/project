@@ -1,197 +1,186 @@
-<div fxLayout="row">
-<div class="dropdown">
-  <button class="dropbtn"><i class="fa fa-bars"> Menu</i></button>
-  <div class="dropdown-content">
-    <a href="http://localhost:4200/client">Client</a>
-    <a href="http://localhost:4200/account">Account</a>
-
-  </div>
-
-</div>
-<table id=demo>
-  <td>
-    <div style="height:550px;overflow:auto;">
-
-      <table id=dashboard>
-        <tr>
-          <th *ngFor="let column of headers">{{column}} </th>
-        </tr>
-
-
-
-        <tbody>
-          <tr *ngFor="let row of dashboarddata">
-
-            <td *ngFor="let column of headers; index as i" id={{row[column]}} >
-              <div *ngIf="(i%2 !== 0 && row['type']=='S' && row[column]>
-                sp_limit) ||
-                (i%2 !== 0 && row['type'] == 'D' && row[column] > dp_limit) ||
-                (i%2 !== 0 && row['type'] == 'T' && row[column] > tp_limit); else elseBlock" style="background-color: red;">
-                {{row[column]}}
-              </div>
-              <ng-template #elseBlock>
-                {{row[column]}}
-              </ng-template>
-              
-
-            </td>
-
-          </tr>
-        </tbody>
-
+<div class="outer-main-1">
+  <div class="inner-main-1">
+    <div class="menu">
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-bars"> Menu</i></button>
+        <div class="dropdown-content">
+          <a href="http://localhost:4200/client">Client</a>
+          <a href="http://localhost:4200/account">Account</a>
+      
+        </div>
+      
+      </div>
+    </div>
+    <div class="content-table-1">
+      <table id=demo>
+        <td>
+          <div style="height:415px;overflow:auto;padding-right: 10px;">
+      
+            <table id=dashboard>
+              <tr>
+                <th *ngFor="let column of headers" style="text-align:center;">{{column}} </th>
+              </tr>
+      
+      
+      
+              <tbody>
+                <tr *ngFor="let row of dashboarddata" style="text-align:center;">
+      
+                  <td *ngFor="let column of headers; index as i" id={{row[column]}} >
+                    <div *ngIf="(i%2 !== 0 && row['type']=='S' && row[column]>
+                      sp_limit) ||
+                      (i%2 !== 0 && row['type'] == 'D' && row[column] > dp_limit) ||
+                      (i%2 !== 0 && row['type'] == 'T' && row[column] > tp_limit); else elseBlock" style="background-color: red;">
+                      {{row[column]}}
+                    </div>
+                    <ng-template #elseBlock>
+                      {{row[column]}}
+                    </ng-template>
+                    
+      
+                  </td>
+      
+                </tr>
+              </tbody>
+      
+            </table>
+          </div>
+        </td>
+        <td>
+          <table id=dashboard>
+            <tr >
+              <th *ngFor="let column of akdheaders" style="text-align:center;">{{column}} </th>
+            </tr>
+      
+      
+      
+            <tbody>
+              <tr *ngFor="let row of akddata" style="text-align:center;">
+      
+                <td *ngFor="let column of aheaders">
+                  <div *ngIf="row[column]> akd_limit  && column == 'data'; else elseBlock" style="background-color: red;">
+                  {{row[column]}}
+                </div>
+                <ng-template #elseBlock>
+                  {{row[column]}}
+                </ng-template>
+                </td>
+      
+              </tr>
+            </tbody>
+      
+          </table>
+        </td>
+      
       </table>
     </div>
-  </td>
-  <td>
-    <table id=dashboard>
-      <tr >
-        <th *ngFor="let column of akdheaders">{{column}} </th>
-      </tr>
-
-
-
-      <tbody>
-        <tr *ngFor="let row of akddata">
-
-          <td *ngFor="let column of aheaders">
-            <div *ngIf="row[column]> akd_limit  && column == 'data'; else elseBlock" style="background-color: red;">
-            {{row[column]}}
-          </div>
-          <ng-template #elseBlock>
-            {{row[column]}}
-          </ng-template>
-          </td>
-
-        </tr>
-      </tbody>
-
-    </table>
-  </td>
-
-</table>
-</div>
-<div fxLayout="row wrap"fxLayoutGap="3px">
-  <br>
-  <div>  
-    <div fxLayout="column">
-      <div>
-    <label>BAZAR &nbsp;
-      <input (change)="getdashboarddata()" [(ngModel)]="bazar.bazar_id" size="1" />
-    </label>
-    <label> &nbsp; Name &nbsp;
-      <input [(ngModel)]="client.name" size="1" />
-    </label>
-
-  </div>
-  <div>
-    <label> &nbsp;
-      <input id="a" (keyup.enter)= 'change_bet()' (keyup.arrowdown) = 'change_bet()' (keyup.arrowright) = 'change_bet()' [(ngModel)]="client.clientid" size="1" />
-    </label>
-    <label>&nbsp;  &nbsp;
-      <input  id="b" (keyup.enter)= 'change_code()' (keyup.arrowup) = 'change_client()' (keyup.arrowleft) = 'change_client()' (keyup.arrowdown) = 'change_code()' (keyup.arrowright) = 'change_code()' [(ngModel)]="bet" size="3" />
-    </label>
-    <label> &nbsp; &nbsp;
-      <input id ='c' (keyup.enter)= 'change_number()' (keyup.arrowup) = 'change_bet()' (keyup.arrowleft) = 'change_bet()' (keyup.arrowdown) = 'change_number()' (keyup.arrowright) = 'change_number()'[(ngModel)]="code" size="1" />
-    </label>
-    <label>&nbsp; &nbsp;
-      <input id ='d'  [(ngModel)]="number" size="9" (keyup.arrowup) = 'change_code()' (keyup.arrowleft) = 'change_code()'  (keyup.enter)="getAllEmployees()" />
-    </label>
-
-
-  </div>
-  <div>
-
-    <label> SP Limit &nbsp;
-      <input [(ngModel)]="sp_limit" size="3" />
-    </label>
-    <label> &nbsp;DP limit &nbsp;
-      <input [(ngModel)]="dp_limit" size="3" />
-    </label>
-  </div>
-  <div>
-    <label> &nbsp;TP limit &nbsp;
-      <input [(ngModel)]="tp_limit" size="3" />
-    </label>
-
-    <label> &nbsp;AKD limit &nbsp;
-      <input [(ngModel)]="akd_limit" size="3" />
-    </label>
-  </div>
-  <div>
     
-    <label> &nbsp;Pana Total &nbsp;
-      <input [(ngModel)]="clienthistory.panu_total" size="3" />
-    </label>
-    <label>&nbsp; AKD Total &nbsp;
-      <input [(ngModel)]="clienthistory.akd_total" size="3" />
-    </label>
-    <label> &nbsp;Total &nbsp;
-      <input [(ngModel)]="clienthistory.total" size="3" /> 
-    </label>
-
   </div>
-  <div>
-    <label> &nbsp; &nbsp;
-      <input [(ngModel)]="overall_pana_total" size="3" />
-    </label>
-    <label>&nbsp;  &nbsp;
-      <input [(ngModel)]="overall_akd_total" size="3" />
-    </label>
-    <label> &nbsp;&nbsp;
-      <input [(ngModel)]="overall_total" size="3" /> 
-    </label>
+  <div class="inner-main-2">
+    <div class="content-inputs">
+      <div style="display: flex;flex-direction: column;flex-basis: 58%;">
+        <div class="input-rows">
+          <label id="allBorderLabel">&nbsp;BAZAR &nbsp;
+            <input id="leftBorderInput" (change)="getdashboarddata()" [(ngModel)]="bazar.bazar_id" size="1" />
+          </label>
+          <label id="allBorderLabel">&nbsp;Name &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="client.name" size="1" />
+          </label>
+        </div>
+        <div class="input-rows">
+          <label>
+            <input id="a allBorderLabel" (keyup.enter)= 'change_bet()' (keyup.arrowdown) = 'change_bet()' (keyup.arrowright) = 'change_bet()' [(ngModel)]="client.clientid" size="1" />
+          </label>
+          <label>&nbsp; &nbsp; 
+            <input  id="b" (keyup.enter)= 'change_code()' (keyup.arrowup) = 'change_client()' (keyup.arrowleft) = 'change_client()' (keyup.arrowdown) = 'change_code()' (keyup.arrowright) = 'change_code()' [(ngModel)]="bet" size="3" />
+          </label>
+          <label>&nbsp; &nbsp; 
+            <input id ='c' (keyup.enter)= 'change_number()' (keyup.arrowup) = 'change_bet()' (keyup.arrowleft) = 'change_bet()' (keyup.arrowdown) = 'change_number()' (keyup.arrowright) = 'change_number()'[(ngModel)]="code" size="1" />
+          </label>
+          <label>&nbsp; &nbsp; 
+            <input id ='d'  [(ngModel)]="number" size="9" (keyup.arrowup) = 'change_code()' (keyup.arrowleft) = 'change_code()'  (keyup.enter)="getAllEmployees()" />
+          </label>
+        </div>
+        <div class="input-rows">
+          <label id="allBorderLabel">&nbsp;SP Limit &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="sp_limit" size="3" />
+          </label>
+          <label id="allBorderLabel"> &nbsp;DP Limit &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="dp_limit" size="3" />
+          </label>
+        </div>
+        <div class="input-rows">
+          <label id="allBorderLabel">&nbsp;TP Limit &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="tp_limit" size="3" />
+          </label>
+      
+          <label id="allBorderLabel">&nbsp;AKD Limit &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="akd_limit" size="3" />
+          </label>
+        </div>
+        <div class="input-rows">
+          <label id="allBorderLabel">&nbsp;Pana Total &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="clienthistory.panu_total" size="3" />
+          </label>
+          <label id="allBorderLabel"> &nbsp;AKD Total &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="clienthistory.akd_total" size="3" />
+          </label>
+          <label id="allBorderLabel">&nbsp;Total &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="clienthistory.total" size="3" /> 
+          </label>
+        </div>
+        <div class="input-rows">
+          <label>
+            <input [(ngModel)]="overall_pana_total" size="3" />
+          </label>
+          <label>&nbsp;  &nbsp;
+            <input [(ngModel)]="overall_akd_total" size="3" />
+          </label>
+          <label> &nbsp;&nbsp;
+            <input [(ngModel)]="overall_total" size="3" /> 
+          </label>
+        </div>
+      </div>
+      <div style="display: flex;flex-direction: column;padding-right: 1px;">
+        <div class="input-rows">
+          <label id="allBorderLabel">&nbsp;Pana &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="pana" size="3" />
+          </label>
+          <label  id="allBorderLabel"> &nbsp;AKD &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="akd" size="3" />
+          </label>
+          <button (click) ='create_account()' class="button button5"> Account</button>
+        </div>
+        <div class="input-rows">
+          <label id="allBorderLabel"> &nbsp;History number &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="history_no" size="3" />
+          </label>
+          <button (click) = 'delete_history()' class="button button5"> Delete  </button>
+          <button (click) = 'reset()' class="button button5"> Reset </button>
+        </div>
+        <div class="input-rows">
+          <button (click) = 'show1()' class="button button5"> Show1 </button>
+          <button (click) = 'show2()' class="button button5">Show2</button>
+          <button (click) = 'hide()' class="button button5">Hide</button>
+        </div>
+      </div>
+    </div>
+    <div class="content-table-2" style="width: 380px;">
+      <table id=history>
+        <tr>
+          <th *ngFor="let row of this.historyheaders">{{row}}</th>
+        </tr>
+        <tbody>
+          <tr *ngFor="let row of this.historydata">
+      
+            <td *ngFor="let column of this.historyheaders">
+              {{row[column]}}
+      
+            </td>
+      
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  
- 
-
-</div>
-</div>
-<div>
-  <div fxLayout="column">
-    <div>
-  <label> &nbsp;Pana &nbsp;
-    <input [(ngModel)]="pana" size="3" />
-  </label>
-  <label>&nbsp; AKD &nbsp;
-    <input [(ngModel)]="akd" size="3" />
-  </label>
-  
-</div>
-  <div>
-    <button (click) ='create_account()'> Account</button>
-
-    <p id="fire"> </p>
-
-  </div>
-  <div>
-    <label> history number &nbsp;
-      <input [(ngModel)]="history_no" size="3" />
-    </label>
-    <button (click) = 'delete_history()'> Delete  </button>
-    <button (click) = 'reset()'> Reset </button>
- </div>
-  <div>
-    <button (click) = 'show1()'> Show1 </button>
-    <button (click) = 'show2()' >Show2</button>
-    <button (click) = 'hide()'>Hide</button>
-  </div>
-</div>
-</div>
-<div>
-<table id=history>
-  <tr>
-    <th *ngFor="let row of this.historyheaders">{{row}}</th>
-  </tr>
-  <tbody>
-    <tr *ngFor="let row of this.historydata">
-
-      <td *ngFor="let column of this.historyheaders">
-        {{row[column]}}
-
-      </td>
-
-    </tr>
-  </tbody>
-</table>
-</div>
 </div>

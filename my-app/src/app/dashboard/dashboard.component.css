@@ -1,82 +1,147 @@
 #dashboard{
-    font-family: Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    height: 10;
-   
-    
-    }
-#history {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 480px;
-  height: 200px;
-  overflow-y:scroll;
-  display:block;
+  width: 100%;
+  height: 10;
+ 
+  
+  }
+#history {
+font-family: Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 480px;
+height: 200px;
+overflow-y:scroll;
+display:block;
 }
 #history td,#history th ,#history tr{
-  border: 1px solid black;
-  padding: 8px;
-  
-  
-  
+border: 1px solid black;
+padding: 8px;
+
+
+
 
 }
+#leftBorderInput{
+border-style: none none none double;
+text-align: center;
+height: 30px;
+}
+#allBorderLabel{
+border: 2px solid grey;
+margin-right: 10px;
+}
+.outer-main-1{
+display: flex;
+flex-direction: column;
+}
+.menu{
+float:left;
+}
+.inner-main-1{
+display: flex;
+flex-direction: row;
+}
+.content-table-1{
+padding:10px;
+}
+.inner-main-2{
+display: flex;
+flex-direction: row;
+padding:1px;
+font-size:12px;
+}
+.input-rows{
+display: flex;
+}
+.content-inputs{
+display: flex;
+flex-direction: row;
+flex-grow: 1;
+}
 #dashboard tr{
-        border: 1px solid black;
-        padding: 3px;
-        width: 55px;
-       
-        
-    
-    }
-    #dashboard th , #dashboard td{
       border: 1px solid black;
-      padding: 1px;
+      padding: 3px;
       width: 55px;
      
       
   
   }
+  #dashboard th , #dashboard td{
+    border: 1px solid black;
+    padding: 1px;
+    width: 55px;
+   
     
-    #dashboard td:nth-child(even){
-        background-color: lightgray;
+
+}
+#dashboard th{
+  background-color: lightgray;
+}
+  
+  #dashboard td:nth-child(even){
+  background-color: lightgray;
+  }
+  #demo{
+      border-collapse:separate;
+      border-spacing: 10spx; 
+  }
+  .dropbtn {
+      background-color: white;
+      color:black;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
     }
-    #demo{
-        border-collapse:separate;
-        border-spacing: 10spx; 
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
     }
-    .dropbtn {
-        background-color: white;
-        color:black;
-        padding: 10px;
-        font-size: 16px;
-        border: none;
-      }
-      
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: white;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-      
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      
-      .dropdown-content a:hover {background-color: #ddd;}
-      
-      .dropdown:hover .dropdown-content {display: block;}
-      
-      .dropdown:hover .dropbtn {background-color: white}
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    .dropdown:hover .dropdown-content {display: block;}
+    
+    .dropdown:hover .dropbtn {background-color: white}
+
+    .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 1px 6px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .button5 {
+      background-color: white;
+      color: black;
+      border: 2px solid #555555;
+    }
+    
+    .button5:hover {
+      background-color: #555555;
+      color: white;
+    }
