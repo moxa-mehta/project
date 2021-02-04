@@ -2,14 +2,11 @@
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  height: 10;
- 
-  
-  }
+}
 #history {
 font-family: Arial, Helvetica, sans-serif;
 border-collapse: collapse;
-width: 480px;
+width: 350px;
 height: 200px;
 overflow-y:scroll;
 display:block;
@@ -17,19 +14,14 @@ display:block;
 #history td,#history th ,#history tr{
 border: 1px solid black;
 padding: 8px;
-
-
-
-
 }
 #leftBorderInput{
 border-style: none none none double;
 text-align: center;
-height: 30px;
 }
 #allBorderLabel{
-border: 2px solid grey;
-margin-right: 10px;
+border: 1px solid grey;
+margin-right: 5px;
 }
 .outer-main-1{
 display: flex;
@@ -39,16 +31,20 @@ flex-direction: column;
 float:left;
 }
 .inner-main-1{
-display: flex;
-flex-direction: row;
+  display: flex;
+  
 }
 .content-table-1{
+  display: flex;
 padding:10px;
+flex : 10%;
+flex-direction: row;
+
 }
 .inner-main-2{
 display: flex;
 flex-direction: row;
-padding:1px;
+padding:10px;
 font-size:12px;
 }
 .input-rows{
@@ -63,6 +59,7 @@ flex-grow: 1;
       border: 1px solid black;
       padding: 3px;
       width: 55px;
+      height: -1px;
      
       
   
@@ -71,20 +68,20 @@ flex-grow: 1;
     border: 1px solid black;
     padding: 1px;
     width: 55px;
-   
+    height: -1px;
+
+    
     
 
 }
-#dashboard th{
-  background-color: lightgray;
-}
   
   #dashboard td:nth-child(even){
-  background-color: lightgray;
+      background-color: lightgray;
   }
   #demo{
       border-collapse:separate;
-      border-spacing: 10spx; 
+      border-spacing: 10spx;
+      height: 100px; 
   }
   .dropbtn {
       background-color: white;
@@ -120,28 +117,3 @@ flex-grow: 1;
     .dropdown:hover .dropdown-content {display: block;}
     
     .dropdown:hover .dropbtn {background-color: white}
-
-    .button {
-      background-color: #4CAF50; /* Green */
-      border: none;
-      color: white;
-      padding: 1px 6px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      transition-duration: 0.4s;
-      cursor: pointer;
-    }
-
-    .button5 {
-      background-color: white;
-      color: black;
-      border: 2px solid #555555;
-    }
-    
-    .button5:hover {
-      background-color: #555555;
-      color: white;
-    }

@@ -10,6 +10,7 @@ import { History } from "../history.model";
 import { Account } from "../account.model";
 import { Datelist } from "../datelist.model";
 import { Classhistory } from "../classhistory.model";
+import { ThrowStmt } from "@angular/compiler";
 
 const httpOptions = {
   headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -129,7 +130,7 @@ export class DASHBOARDComponent implements OnInit {
   ];
   akdheaders = ["Akd", "Data"];
   aheaders = ["akd", "data"];
-  historyheaders = ["sr_no","client_id", "bet", "bet_total", "code", "number", "bazar"];
+  historyheaders = ["client_id", "bet", "bet_total", "code", "number", "bazar"];
   totalpanu: number;
   totalakd: number;
   history_no : number;
@@ -181,12 +182,12 @@ export class DASHBOARDComponent implements OnInit {
 
           }
           else{
-            for (var i = 1; i < 13; i++) {
+            //for (var i = 1; i < 13; i++) {
               //let x1 : Database =
               let x1 = {
                 tum: [
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "128",
                     "01": 0,
                     "2": "129",
@@ -210,7 +211,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "137",
                     "01": 0,
                     "2": "138",
@@ -234,7 +235,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "146",
                     "01": 0,
                     "2": "147",
@@ -258,7 +259,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "236",
                     "01": 0,
                     "2": "156",
@@ -282,7 +283,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar:this.bazar.bazar_id,
                     "1": "245",
                     "01": 0,
                     "2": "237",
@@ -306,7 +307,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "290",
                     "01": 0,
                     "2": "246",
@@ -330,7 +331,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "380",
                     "01": 0,
                     "2": "345",
@@ -354,7 +355,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "470",
                     "01": 0,
                     "2": "390",
@@ -378,7 +379,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "489",
                     "01": 0,
                     "2": "480",
@@ -402,7 +403,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "560",
                     "01": 0,
                     "2": "570",
@@ -426,7 +427,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "579",
                     "01": 0,
                     "2": "589",
@@ -450,7 +451,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "678",
                     "01": 0,
                     "2": "679",
@@ -474,7 +475,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "S",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "100",
                     "01": 0,
                     "2": "110",
@@ -498,7 +499,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "D",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "119",
                     "01": 0,
                     "2": "200",
@@ -522,7 +523,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "D",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "155",
                     "01": 0,
                     "2": "228",
@@ -546,7 +547,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "D",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar:this.bazar.bazar_id,
                     "1": "227",
                     "01": 0,
                     "2": "255",
@@ -570,7 +571,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "D",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "335",
                     "01": 0,
                     "2": "336",
@@ -594,7 +595,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "D",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "344",
                     "01": 0,
                     "2": "499",
@@ -618,7 +619,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "D",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "399",
                     "01": 0,
                     "2": "660",
@@ -642,7 +643,7 @@ export class DASHBOARDComponent implements OnInit {
                     type: "D",
                   },
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "588",
                     "01": 0,
                     "2": "688",
@@ -667,7 +668,7 @@ export class DASHBOARDComponent implements OnInit {
                   },
         
                   {
-                    Bazar: i.toString(),
+                    Bazar:this.bazar.bazar_id,
                     "1": "669",
                     "01": 0,
                     "2": "778",
@@ -692,7 +693,7 @@ export class DASHBOARDComponent implements OnInit {
                   },
         
                   {
-                    Bazar: i.toString(),
+                    Bazar: this.bazar.bazar_id,
                     "1": "777",
                     "01": 0,
                     "2": "444",
@@ -721,7 +722,6 @@ export class DASHBOARDComponent implements OnInit {
         
                this.filltable(x1);
                
-            }
           }
 
           this.httpClient
@@ -743,26 +743,26 @@ export class DASHBOARDComponent implements OnInit {
         }
         else
         {
-          for (var i = 1; i < 13; i++) {
+          //for (var i = 1; i < 13; i++) {
 
             let x2 = {
               tum: [
-                { akd: "1", data: 0, bazar_id: i.toString() },
-                { akd: "2", data: 0, bazar_id: i.toString() },
-                { akd: "3", data: 0, bazar_id: i.toString() },
-                { akd: "4", data: 0, bazar_id: i.toString() },
-                { akd: "5", data: 0, bazar_id: i.toString() },
-                { akd: "6", data: 0, bazar_id: i.toString() },
-                { akd: "7", data: 0, bazar_id: i.toString() },
-                { akd: "8", data: 0, bazar_id: i.toString() },
-                { akd: "9", data: 0, bazar_id: i.toString() },
-                { akd: "0", data: 0, bazar_id: i.toString() },
+                { akd: "1", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "2", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "3", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "4", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "5", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "6", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "7", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "8", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "9", data: 0, bazar_id: this.bazar.bazar_id },
+                { akd: "0", data: 0, bazar_id: this.bazar.bazar_id },
               ],
             };
     
             this.fillakdtable(x2);
             //console.log(this.akddata);
-          }
+          
         }
         this.httpClient
       .get("http://127.0.0.1:5002/akdtable/" + this.bazar.bazar_id)
@@ -775,6 +775,649 @@ export class DASHBOARDComponent implements OnInit {
 
   ngOnInit(): void {}
   getdashboarddata() {
+    this.httpClient
+    .get("http://127.0.0.1:5002/dashboard/" + this.bazar.bazar_id)
+    .subscribe((data) => {
+      this.dashboarddata = data as JSON;
+      //console.log(this.clienthistoryj);
+        if (Object.keys(this.dashboarddata).length)
+        {
+
+        }
+        else{
+          //for (var i = 1; i < 13; i++) {
+            //let x1 : Database =
+            let x1 = {
+              tum: [
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "128",
+                  "01": 0,
+                  "2": "129",
+                  "02": 0,
+                  "3": "120",
+                  "03": 0,
+                  "4": "130",
+                  "04": 0,
+                  "5": "140",
+                  "05": 0,
+                  "6": "123",
+                  "06": 0,
+                  "7": "124",
+                  "07": 0,
+                  "8": "125",
+                  "08": 0,
+                  "9": "126",
+                  "09": 0,
+                  "10": "127",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "137",
+                  "01": 0,
+                  "2": "138",
+                  "02": 0,
+                  "3": "139",
+                  "03": 0,
+                  "4": "149",
+                  "04": 0,
+                  "5": "159",
+                  "05": 0,
+                  "6": "150",
+                  "06": 0,
+                  "7": "160",
+                  "07": 0,
+                  "8": "134",
+                  "08": 0,
+                  "9": "135",
+                  "09": 0,
+                  "10": "136",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "146",
+                  "01": 0,
+                  "2": "147",
+                  "02": 0,
+                  "3": "148",
+                  "03": 0,
+                  "4": "158",
+                  "04": 0,
+                  "5": "168",
+                  "05": 0,
+                  "6": "169",
+                  "06": 0,
+                  "7": "179",
+                  "07": 0,
+                  "8": "170",
+                  "08": 0,
+                  "9": "180",
+                  "09": 0,
+                  "10": "145",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "236",
+                  "01": 0,
+                  "2": "156",
+                  "02": 0,
+                  "3": "157",
+                  "03": 0,
+                  "4": "167",
+                  "04": 0,
+                  "5": "230",
+                  "05": 0,
+                  "6": "178",
+                  "06": 0,
+                  "7": "250",
+                  "07": 0,
+                  "8": "189",
+                  "08": 0,
+                  "9": "234",
+                  "09": 0,
+                  "10": "190",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar:this.bazar.bazar_id,
+                  "1": "245",
+                  "01": 0,
+                  "2": "237",
+                  "02": 0,
+                  "3": "238",
+                  "03": 0,
+                  "4": "239",
+                  "04": 0,
+                  "5": "249",
+                  "05": 0,
+                  "6": "240",
+                  "06": 0,
+                  "7": "269",
+                  "07": 0,
+                  "8": "260",
+                  "08": 0,
+                  "9": "270",
+                  "09": 0,
+                  "10": "235",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "290",
+                  "01": 0,
+                  "2": "246",
+                  "02": 0,
+                  "3": "247",
+                  "03": 0,
+                  "4": "248",
+                  "04": 0,
+                  "5": "258",
+                  "05": 0,
+                  "6": "259",
+                  "06": 0,
+                  "7": "278",
+                  "07": 0,
+                  "8": "279",
+                  "08": 0,
+                  "9": "289",
+                  "09": 0,
+                  "10": "280",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "380",
+                  "01": 0,
+                  "2": "345",
+                  "02": 0,
+                  "3": "256",
+                  "03": 0,
+                  "4": "257",
+                  "04": 0,
+                  "5": "267",
+                  "05": 0,
+                  "6": "268",
+                  "06": 0,
+                  "7": "340",
+                  "07": 0,
+                  "8": "350",
+                  "08": 0,
+                  "9": "360",
+                  "09": 0,
+                  "10": "370",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "470",
+                  "01": 0,
+                  "2": "390",
+                  "02": 0,
+                  "3": "346",
+                  "03": 0,
+                  "4": "347",
+                  "04": 0,
+                  "5": "348",
+                  "05": 0,
+                  "6": "349",
+                  "06": 0,
+                  "7": "359",
+                  "07": 0,
+                  "8": "369",
+                  "08": 0,
+                  "9": "379",
+                  "09": 0,
+                  "10": "389",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "489",
+                  "01": 0,
+                  "2": "480",
+                  "02": 0,
+                  "3": "490",
+                  "03": 0,
+                  "4": "356",
+                  "04": 0,
+                  "5": "357",
+                  "05": 0,
+                  "6": "358",
+                  "06": 0,
+                  "7": "368",
+                  "07": 0,
+                  "8": "378",
+                  "08": 0,
+                  "9": "450",
+                  "09": 0,
+                  "10": "460",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "560",
+                  "01": 0,
+                  "2": "570",
+                  "02": 0,
+                  "3": "580",
+                  "03": 0,
+                  "4": "590",
+                  "04": 0,
+                  "5": "456",
+                  "05": 0,
+                  "6": "367",
+                  "06": 0,
+                  "7": "458",
+                  "07": 0,
+                  "8": "459",
+                  "08": 0,
+                  "9": "469",
+                  "09": 0,
+                  "10": "479",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "579",
+                  "01": 0,
+                  "2": "589",
+                  "02": 0,
+                  "3": "670",
+                  "03": 0,
+                  "4": "680",
+                  "04": 0,
+                  "5": "690",
+                  "05": 0,
+                  "6": "457",
+                  "06": 0,
+                  "7": "467",
+                  "07": 0,
+                  "8": "468",
+                  "08": 0,
+                  "9": "478",
+                  "09": 0,
+                  "10": "569",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "678",
+                  "01": 0,
+                  "2": "679",
+                  "02": 0,
+                  "3": "689",
+                  "03": 0,
+                  "4": "789",
+                  "04": 0,
+                  "5": "780",
+                  "05": 0,
+                  "6": "790",
+                  "06": 0,
+                  "7": "890",
+                  "07": 0,
+                  "8": "567",
+                  "08": 0,
+                  "9": "568",
+                  "09": 0,
+                  "10": "578",
+                  "010": 0,
+                  type: "S",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "100",
+                  "01": 0,
+                  "2": "110",
+                  "02": 0,
+                  "3": "166",
+                  "03": 0,
+                  "4": "112",
+                  "04": 0,
+                  "5": "113",
+                  "05": 0,
+                  "6": "114",
+                  "06": 0,
+                  "7": "115",
+                  "07": 0,
+                  "8": "116",
+                  "08": 0,
+                  "9": "117",
+                  "09": 0,
+                  "10": "118",
+                  "010": 0,
+                  type: "D",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "119",
+                  "01": 0,
+                  "2": "200",
+                  "02": 0,
+                  "3": "229",
+                  "03": 0,
+                  "4": "220",
+                  "04": 0,
+                  "5": "122",
+                  "05": 0,
+                  "6": "277",
+                  "06": 0,
+                  "7": "133",
+                  "07": 0,
+                  "8": "224",
+                  "08": 0,
+                  "9": "144",
+                  "09": 0,
+                  "10": "226",
+                  "010": 0,
+                  type: "D",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "155",
+                  "01": 0,
+                  "2": "228",
+                  "02": 0,
+                  "3": "300",
+                  "03": 0,
+                  "4": "266",
+                  "04": 0,
+                  "5": "177",
+                  "05": 0,
+                  "6": "330",
+                  "06": 0,
+                  "7": "188",
+                  "07": 0,
+                  "8": "233",
+                  "08": 0,
+                  "9": "199",
+                  "09": 0,
+                  "10": "244",
+                  "010": 0,
+                  type: "D",
+                },
+                {
+                  Bazar:this.bazar.bazar_id,
+                  "1": "227",
+                  "01": 0,
+                  "2": "255",
+                  "02": 0,
+                  "3": "337",
+                  "03": 0,
+                  "4": "338",
+                  "04": 0,
+                  "5": "339",
+                  "05": 0,
+                  "6": "448",
+                  "06": 0,
+                  "7": "223",
+                  "07": 0,
+                  "8": "288",
+                  "08": 0,
+                  "9": "225",
+                  "09": 0,
+                  "10": "299",
+                  "010": 0,
+                  type: "D",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "335",
+                  "01": 0,
+                  "2": "336",
+                  "02": 0,
+                  "3": "355",
+                  "03": 0,
+                  "4": "400",
+                  "04": 0,
+                  "5": "366",
+                  "05": 0,
+                  "6": "466",
+                  "06": 0,
+                  "7": "377",
+                  "07": 0,
+                  "8": "440",
+                  "08": 0,
+                  "9": "388",
+                  "09": 0,
+                  "10": "334",
+                  "010": 0,
+                  type: "D",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "344",
+                  "01": 0,
+                  "2": "499",
+                  "02": 0,
+                  "3": "445",
+                  "03": 0,
+                  "4": "446",
+                  "04": 0,
+                  "5": "447",
+                  "05": 0,
+                  "6": "556",
+                  "06": 0,
+                  "7": "449",
+                  "07": 0,
+                  "8": "477",
+                  "08": 0,
+                  "9": "559",
+                  "09": 0,
+                  "10": "488",
+                  "010": 0,
+                  type: "D",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "399",
+                  "01": 0,
+                  "2": "660",
+                  "02": 0,
+                  "3": "599",
+                  "03": 0,
+                  "4": "455",
+                  "04": 0,
+                  "5": "500",
+                  "05": 0,
+                  "6": "600",
+                  "06": 0,
+                  "7": "557",
+                  "07": 0,
+                  "8": "558",
+                  "08": 0,
+                  "9": "577",
+                  "09": 0,
+                  "10": "550",
+                  "010": 0,
+                  type: "D",
+                },
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "588",
+                  "01": 0,
+                  "2": "688",
+                  "02": 0,
+                  "3": "779",
+                  "03": 0,
+                  "4": "699",
+                  "04": 0,
+                  "5": "799",
+                  "05": 0,
+                  "6": "880",
+                  "06": 0,
+                  "7": "566",
+                  "07": 0,
+                  "8": "800",
+                  "08": 0,
+                  "9": "667",
+                  "09": 0,
+                  "10": "668",
+                  "010": 0,
+                  type: "D",
+                },
+      
+                {
+                  Bazar:this.bazar.bazar_id,
+                  "1": "669",
+                  "01": 0,
+                  "2": "778",
+                  "02": 0,
+                  "3": "788",
+                  "03": 0,
+                  "4": "770",
+                  "04": 0,
+                  "5": "889",
+                  "05": 0,
+                  "6": "899",
+                  "06": 0,
+                  "7": "700",
+                  "07": 0,
+                  "8": "990",
+                  "08": 0,
+                  "9": "900",
+                  "09": 0,
+                  "10": "677",
+                  "010": 0,
+                  type: "D",
+                },
+      
+                {
+                  Bazar: this.bazar.bazar_id,
+                  "1": "777",
+                  "01": 0,
+                  "2": "444",
+                  "02": 0,
+                  "3": "111",
+                  "03": 0,
+                  "4": "888",
+                  "04": 0,
+                  "5": "555",
+                  "05": 0,
+                  "6": "222",
+                  "06": 0,
+                  "7": "999",
+                  "07": 0,
+                  "8": "666",
+                  "08": 0,
+                  "9": "333",
+                  "09": 0,
+                  "10": "1000",
+                  "010": 0,
+                  type: "T",
+                },
+              ],
+            };
+            
+      
+             this.filltable(x1);
+             
+        }
+
+        this.httpClient
+    .get("http://127.0.0.1:5002/dashboard/" + this.bazar.bazar_id)
+    .subscribe((data) => {
+      this.dashboarddata = data as JSON;
+
+      console.log(this.dashboarddata);
+    });
+
+      //console.log(this.dashboarddata);
+    });
+  this.httpClient
+    .get("http://127.0.0.1:5002/akdtable/" + this.bazar.bazar_id)
+    .subscribe((data) => {
+      this.akddata = data as JSON;
+      if (Object.keys(this.akddata).length)
+      {
+      }
+      else
+      {
+        //for (var i = 1; i < 13; i++) {
+
+          let x2 = {
+            tum: [
+              { akd: "1", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "2", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "3", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "4", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "5", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "6", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "7", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "8", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "9", data: 0, bazar_id: this.bazar.bazar_id },
+              { akd: "0", data: 0, bazar_id: this.bazar.bazar_id },
+            ],
+          };
+  
+          this.fillakdtable(x2);
+          //console.log(this.akddata);
+        
+      }
+      this.httpClient
+    .get("http://127.0.0.1:5002/akdtable/" + this.bazar.bazar_id)
+    .subscribe((data) => {
+      this.akddata = data as JSON;
+      console.log(this.akddata);
+    });
+    });
+
+
+
+    this.httpClient
+    .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+    .subscribe((data) => {
+      this.clienthistorydata = data as JSON;
+      this.overall_pana_total = 0;
+      this.overall_akd_total = 0;
+      for(let row of this.clienthistorydata)
+      {
+        this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+        this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+
+      }
+      this.overall_total = this.overall_pana_total + this.overall_akd_total;
+      //this.history = this.historydata;
+      //console.log(this.historydata);
+    });
+    this.httpClient
+                    .get(
+                      "http://127.0.0.1:5002/getclienthistory/" +
+                        this.client.clientid +
+                        "/" +
+                        this.bazar.bazar_id
+                    )
+                    .subscribe((data) => {
+                      this.clienthistoryj = data as JSON;
+                      if(Object.keys(this.clienthistoryj).length)
+                      {
+                      this.clienthistory.panu_total = this.clienthistoryj[0].pana_total;
+                      this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
+                      this.clienthistory.total = this.clienthistoryj[0].total;
+                      }
+                      else
+                      {
+                        this.clienthistory.panu_total = 0;
+                        this.clienthistory.akd_total = 0;
+                        this.clienthistory.total = 0;
+                      }
+                      
+
+                    }); 
+    this.total = 0;
     this.httpClient
       .get("http://127.0.0.1:5002/dashboard/" + this.bazar.bazar_id)
       .subscribe((data) => {
@@ -802,10 +1445,563 @@ export class DASHBOARDComponent implements OnInit {
     this.overall_pana_total = 0;
     this.overall_total = 0;
     this.overall_akd_total = 0;
+    let x1 = {
+      tum: [
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "128",
+          "01": 0,
+          "2": "129",
+          "02": 0,
+          "3": "120",
+          "03": 0,
+          "4": "130",
+          "04": 0,
+          "5": "140",
+          "05": 0,
+          "6": "123",
+          "06": 0,
+          "7": "124",
+          "07": 0,
+          "8": "125",
+          "08": 0,
+          "9": "126",
+          "09": 0,
+          "10": "127",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "137",
+          "01": 0,
+          "2": "138",
+          "02": 0,
+          "3": "139",
+          "03": 0,
+          "4": "149",
+          "04": 0,
+          "5": "159",
+          "05": 0,
+          "6": "150",
+          "06": 0,
+          "7": "160",
+          "07": 0,
+          "8": "134",
+          "08": 0,
+          "9": "135",
+          "09": 0,
+          "10": "136",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "146",
+          "01": 0,
+          "2": "147",
+          "02": 0,
+          "3": "148",
+          "03": 0,
+          "4": "158",
+          "04": 0,
+          "5": "168",
+          "05": 0,
+          "6": "169",
+          "06": 0,
+          "7": "179",
+          "07": 0,
+          "8": "170",
+          "08": 0,
+          "9": "180",
+          "09": 0,
+          "10": "145",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "236",
+          "01": 0,
+          "2": "156",
+          "02": 0,
+          "3": "157",
+          "03": 0,
+          "4": "167",
+          "04": 0,
+          "5": "230",
+          "05": 0,
+          "6": "178",
+          "06": 0,
+          "7": "250",
+          "07": 0,
+          "8": "189",
+          "08": 0,
+          "9": "234",
+          "09": 0,
+          "10": "190",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "245",
+          "01": 0,
+          "2": "237",
+          "02": 0,
+          "3": "238",
+          "03": 0,
+          "4": "239",
+          "04": 0,
+          "5": "249",
+          "05": 0,
+          "6": "240",
+          "06": 0,
+          "7": "269",
+          "07": 0,
+          "8": "260",
+          "08": 0,
+          "9": "270",
+          "09": 0,
+          "10": "235",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "290",
+          "01": 0,
+          "2": "246",
+          "02": 0,
+          "3": "247",
+          "03": 0,
+          "4": "248",
+          "04": 0,
+          "5": "258",
+          "05": 0,
+          "6": "259",
+          "06": 0,
+          "7": "278",
+          "07": 0,
+          "8": "279",
+          "08": 0,
+          "9": "289",
+          "09": 0,
+          "10": "280",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "380",
+          "01": 0,
+          "2": "345",
+          "02": 0,
+          "3": "256",
+          "03": 0,
+          "4": "257",
+          "04": 0,
+          "5": "267",
+          "05": 0,
+          "6": "268",
+          "06": 0,
+          "7": "340",
+          "07": 0,
+          "8": "350",
+          "08": 0,
+          "9": "360",
+          "09": 0,
+          "10": "370",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "470",
+          "01": 0,
+          "2": "390",
+          "02": 0,
+          "3": "346",
+          "03": 0,
+          "4": "347",
+          "04": 0,
+          "5": "348",
+          "05": 0,
+          "6": "349",
+          "06": 0,
+          "7": "359",
+          "07": 0,
+          "8": "369",
+          "08": 0,
+          "9": "379",
+          "09": 0,
+          "10": "389",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "489",
+          "01": 0,
+          "2": "480",
+          "02": 0,
+          "3": "490",
+          "03": 0,
+          "4": "356",
+          "04": 0,
+          "5": "357",
+          "05": 0,
+          "6": "358",
+          "06": 0,
+          "7": "368",
+          "07": 0,
+          "8": "378",
+          "08": 0,
+          "9": "450",
+          "09": 0,
+          "10": "460",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "560",
+          "01": 0,
+          "2": "570",
+          "02": 0,
+          "3": "580",
+          "03": 0,
+          "4": "590",
+          "04": 0,
+          "5": "456",
+          "05": 0,
+          "6": "367",
+          "06": 0,
+          "7": "458",
+          "07": 0,
+          "8": "459",
+          "08": 0,
+          "9": "469",
+          "09": 0,
+          "10": "479",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "579",
+          "01": 0,
+          "2": "589",
+          "02": 0,
+          "3": "670",
+          "03": 0,
+          "4": "680",
+          "04": 0,
+          "5": "690",
+          "05": 0,
+          "6": "457",
+          "06": 0,
+          "7": "467",
+          "07": 0,
+          "8": "468",
+          "08": 0,
+          "9": "478",
+          "09": 0,
+          "10": "569",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "678",
+          "01": 0,
+          "2": "679",
+          "02": 0,
+          "3": "689",
+          "03": 0,
+          "4": "789",
+          "04": 0,
+          "5": "780",
+          "05": 0,
+          "6": "790",
+          "06": 0,
+          "7": "890",
+          "07": 0,
+          "8": "567",
+          "08": 0,
+          "9": "568",
+          "09": 0,
+          "10": "578",
+          "010": 0,
+          type: "S",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "100",
+          "01": 0,
+          "2": "110",
+          "02": 0,
+          "3": "166",
+          "03": 0,
+          "4": "112",
+          "04": 0,
+          "5": "113",
+          "05": 0,
+          "6": "114",
+          "06": 0,
+          "7": "115",
+          "07": 0,
+          "8": "116",
+          "08": 0,
+          "9": "117",
+          "09": 0,
+          "10": "118",
+          "010": 0,
+          type: "D",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "119",
+          "01": 0,
+          "2": "200",
+          "02": 0,
+          "3": "229",
+          "03": 0,
+          "4": "220",
+          "04": 0,
+          "5": "122",
+          "05": 0,
+          "6": "277",
+          "06": 0,
+          "7": "133",
+          "07": 0,
+          "8": "224",
+          "08": 0,
+          "9": "144",
+          "09": 0,
+          "10": "226",
+          "010": 0,
+          type: "D",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "155",
+          "01": 0,
+          "2": "228",
+          "02": 0,
+          "3": "300",
+          "03": 0,
+          "4": "266",
+          "04": 0,
+          "5": "177",
+          "05": 0,
+          "6": "330",
+          "06": 0,
+          "7": "188",
+          "07": 0,
+          "8": "233",
+          "08": 0,
+          "9": "199",
+          "09": 0,
+          "10": "244",
+          "010": 0,
+          type: "D",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "227",
+          "01": 0,
+          "2": "255",
+          "02": 0,
+          "3": "337",
+          "03": 0,
+          "4": "338",
+          "04": 0,
+          "5": "339",
+          "05": 0,
+          "6": "448",
+          "06": 0,
+          "7": "223",
+          "07": 0,
+          "8": "288",
+          "08": 0,
+          "9": "225",
+          "09": 0,
+          "10": "299",
+          "010": 0,
+          type: "D",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "335",
+          "01": 0,
+          "2": "336",
+          "02": 0,
+          "3": "355",
+          "03": 0,
+          "4": "400",
+          "04": 0,
+          "5": "366",
+          "05": 0,
+          "6": "466",
+          "06": 0,
+          "7": "377",
+          "07": 0,
+          "8": "440",
+          "08": 0,
+          "9": "388",
+          "09": 0,
+          "10": "334",
+          "010": 0,
+          type: "D",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "344",
+          "01": 0,
+          "2": "499",
+          "02": 0,
+          "3": "445",
+          "03": 0,
+          "4": "446",
+          "04": 0,
+          "5": "447",
+          "05": 0,
+          "6": "556",
+          "06": 0,
+          "7": "449",
+          "07": 0,
+          "8": "477",
+          "08": 0,
+          "9": "559",
+          "09": 0,
+          "10": "488",
+          "010": 0,
+          type: "D",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "399",
+          "01": 0,
+          "2": "660",
+          "02": 0,
+          "3": "599",
+          "03": 0,
+          "4": "455",
+          "04": 0,
+          "5": "500",
+          "05": 0,
+          "6": "600",
+          "06": 0,
+          "7": "557",
+          "07": 0,
+          "8": "558",
+          "08": 0,
+          "9": "577",
+          "09": 0,
+          "10": "550",
+          "010": 0,
+          type: "D",
+        },
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "588",
+          "01": 0,
+          "2": "688",
+          "02": 0,
+          "3": "779",
+          "03": 0,
+          "4": "699",
+          "04": 0,
+          "5": "799",
+          "05": 0,
+          "6": "880",
+          "06": 0,
+          "7": "566",
+          "07": 0,
+          "8": "800",
+          "08": 0,
+          "9": "667",
+          "09": 0,
+          "10": "668",
+          "010": 0,
+          type: "D",
+        },
+
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "669",
+          "01": 0,
+          "2": "778",
+          "02": 0,
+          "3": "788",
+          "03": 0,
+          "4": "770",
+          "04": 0,
+          "5": "889",
+          "05": 0,
+          "6": "899",
+          "06": 0,
+          "7": "700",
+          "07": 0,
+          "8": "990",
+          "08": 0,
+          "9": "900",
+          "09": 0,
+          "10": "677",
+          "010": 0,
+          type: "D",
+        },
+
+        {
+          Bazar: this.bazar.bazar_id,
+          "1": "777",
+          "01": 0,
+          "2": "444",
+          "02": 0,
+          "3": "111",
+          "03": 0,
+          "4": "888",
+          "04": 0,
+          "5": "555",
+          "05": 0,
+          "6": "222",
+          "06": 0,
+          "7": "999",
+          "07": 0,
+          "8": "666",
+          "08": 0,
+          "9": "333",
+          "09": 0,
+
+          "10": "1000",
+          "010": 0,
+          type: "T",
+        },
+      ],
+    };
+    let x2 = {
+      tum: [
+        { akd: "1", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "2", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "3", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "4", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "5", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "6", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "7", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "8", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "9", data: 0, bazar_id: this.bazar.bazar_id },
+        { akd: "0", data: 0, bazar_id: this.bazar.bazar_id },
+      ],
+    };
+
+
     this.httpClient
-      .delete("http://127.0.0.1:5002/deletedashboard", httpOptions)
+      .delete("http://127.0.0.1:5002/deletedashboard/"+this.bazar.bazar_id, httpOptions)
       .subscribe(
         (data) => {
+           this.filltable(x1);
+           
           console.log("data receivesd:", data);
         },
         (err) => {
@@ -813,7 +2009,7 @@ export class DASHBOARDComponent implements OnInit {
         }
       );
       this.httpClient
-      .delete("http://127.0.0.1:5002/deleteindividualhist", httpOptions)
+      .delete("http://127.0.0.1:5002/deleteindividualhist/"+this.bazar.bazar_id, httpOptions)
       .subscribe(
         (data) => {
           console.log("data receivesd:", data);
@@ -823,7 +2019,7 @@ export class DASHBOARDComponent implements OnInit {
         }
       );
     this.httpClient
-      .delete("http://127.0.0.1:5002/deletehistory", httpOptions)
+      .delete("http://127.0.0.1:5002/deletehistory/"+this.bazar.bazar_id, httpOptions)
       .subscribe(
         (data) => {
           console.log("data receivesd:", data);
@@ -853,9 +2049,11 @@ export class DASHBOARDComponent implements OnInit {
         }
       );
     this.httpClient
-      .delete("http://127.0.0.1:5002/deleteakdtable", httpOptions)
+      .delete("http://127.0.0.1:5002/deleteakdtable/"+this.bazar.bazar_id, httpOptions)
       .subscribe(
         (data) => {
+          this.fillakdtable(x2);
+          
           console.log("data receivesd:", data);
         },
         (err) => {
@@ -864,571 +2062,23 @@ export class DASHBOARDComponent implements OnInit {
       );
 
     this.httpClient
-      .delete("http://127.0.0.1:5002/deletetable", httpOptions)
+      .delete("http://127.0.0.1:5002/deletetable/"+this.bazar.bazar_id, httpOptions)
       .subscribe(
         (data) => {
           console.log("data receivesd:", data);
+          
         },
         (err) => {
           console.log("error from backend:", err);
         }
       );
 
-    for (var i = 1; i < 13; i++) {
+    //for (var i = 1; i < 13; i++) {
       //let x1 : Database =
-      let x1 = {
-        tum: [
-          {
-            Bazar: i.toString(),
-            "1": "128",
-            "01": 0,
-            "2": "129",
-            "02": 0,
-            "3": "120",
-            "03": 0,
-            "4": "130",
-            "04": 0,
-            "5": "140",
-            "05": 0,
-            "6": "123",
-            "06": 0,
-            "7": "124",
-            "07": 0,
-            "8": "125",
-            "08": 0,
-            "9": "126",
-            "09": 0,
-            "10": "127",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "137",
-            "01": 0,
-            "2": "138",
-            "02": 0,
-            "3": "139",
-            "03": 0,
-            "4": "149",
-            "04": 0,
-            "5": "159",
-            "05": 0,
-            "6": "150",
-            "06": 0,
-            "7": "160",
-            "07": 0,
-            "8": "134",
-            "08": 0,
-            "9": "135",
-            "09": 0,
-            "10": "136",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "146",
-            "01": 0,
-            "2": "147",
-            "02": 0,
-            "3": "148",
-            "03": 0,
-            "4": "158",
-            "04": 0,
-            "5": "168",
-            "05": 0,
-            "6": "169",
-            "06": 0,
-            "7": "179",
-            "07": 0,
-            "8": "170",
-            "08": 0,
-            "9": "180",
-            "09": 0,
-            "10": "145",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "236",
-            "01": 0,
-            "2": "156",
-            "02": 0,
-            "3": "157",
-            "03": 0,
-            "4": "167",
-            "04": 0,
-            "5": "230",
-            "05": 0,
-            "6": "178",
-            "06": 0,
-            "7": "250",
-            "07": 0,
-            "8": "189",
-            "08": 0,
-            "9": "234",
-            "09": 0,
-            "10": "190",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "245",
-            "01": 0,
-            "2": "237",
-            "02": 0,
-            "3": "238",
-            "03": 0,
-            "4": "239",
-            "04": 0,
-            "5": "249",
-            "05": 0,
-            "6": "240",
-            "06": 0,
-            "7": "269",
-            "07": 0,
-            "8": "260",
-            "08": 0,
-            "9": "270",
-            "09": 0,
-            "10": "235",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "290",
-            "01": 0,
-            "2": "246",
-            "02": 0,
-            "3": "247",
-            "03": 0,
-            "4": "248",
-            "04": 0,
-            "5": "258",
-            "05": 0,
-            "6": "259",
-            "06": 0,
-            "7": "278",
-            "07": 0,
-            "8": "279",
-            "08": 0,
-            "9": "289",
-            "09": 0,
-            "10": "280",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "380",
-            "01": 0,
-            "2": "345",
-            "02": 0,
-            "3": "256",
-            "03": 0,
-            "4": "257",
-            "04": 0,
-            "5": "267",
-            "05": 0,
-            "6": "268",
-            "06": 0,
-            "7": "340",
-            "07": 0,
-            "8": "350",
-            "08": 0,
-            "9": "360",
-            "09": 0,
-            "10": "370",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "470",
-            "01": 0,
-            "2": "390",
-            "02": 0,
-            "3": "346",
-            "03": 0,
-            "4": "347",
-            "04": 0,
-            "5": "348",
-            "05": 0,
-            "6": "349",
-            "06": 0,
-            "7": "359",
-            "07": 0,
-            "8": "369",
-            "08": 0,
-            "9": "379",
-            "09": 0,
-            "10": "389",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "489",
-            "01": 0,
-            "2": "480",
-            "02": 0,
-            "3": "490",
-            "03": 0,
-            "4": "356",
-            "04": 0,
-            "5": "357",
-            "05": 0,
-            "6": "358",
-            "06": 0,
-            "7": "368",
-            "07": 0,
-            "8": "378",
-            "08": 0,
-            "9": "450",
-            "09": 0,
-            "10": "460",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "560",
-            "01": 0,
-            "2": "570",
-            "02": 0,
-            "3": "580",
-            "03": 0,
-            "4": "590",
-            "04": 0,
-            "5": "456",
-            "05": 0,
-            "6": "367",
-            "06": 0,
-            "7": "458",
-            "07": 0,
-            "8": "459",
-            "08": 0,
-            "9": "469",
-            "09": 0,
-            "10": "479",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "579",
-            "01": 0,
-            "2": "589",
-            "02": 0,
-            "3": "670",
-            "03": 0,
-            "4": "680",
-            "04": 0,
-            "5": "690",
-            "05": 0,
-            "6": "457",
-            "06": 0,
-            "7": "467",
-            "07": 0,
-            "8": "468",
-            "08": 0,
-            "9": "478",
-            "09": 0,
-            "10": "569",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "678",
-            "01": 0,
-            "2": "679",
-            "02": 0,
-            "3": "689",
-            "03": 0,
-            "4": "789",
-            "04": 0,
-            "5": "780",
-            "05": 0,
-            "6": "790",
-            "06": 0,
-            "7": "890",
-            "07": 0,
-            "8": "567",
-            "08": 0,
-            "9": "568",
-            "09": 0,
-            "10": "578",
-            "010": 0,
-            type: "S",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "100",
-            "01": 0,
-            "2": "110",
-            "02": 0,
-            "3": "166",
-            "03": 0,
-            "4": "112",
-            "04": 0,
-            "5": "113",
-            "05": 0,
-            "6": "114",
-            "06": 0,
-            "7": "115",
-            "07": 0,
-            "8": "116",
-            "08": 0,
-            "9": "117",
-            "09": 0,
-            "10": "118",
-            "010": 0,
-            type: "D",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "119",
-            "01": 0,
-            "2": "200",
-            "02": 0,
-            "3": "229",
-            "03": 0,
-            "4": "220",
-            "04": 0,
-            "5": "122",
-            "05": 0,
-            "6": "277",
-            "06": 0,
-            "7": "133",
-            "07": 0,
-            "8": "224",
-            "08": 0,
-            "9": "144",
-            "09": 0,
-            "10": "226",
-            "010": 0,
-            type: "D",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "155",
-            "01": 0,
-            "2": "228",
-            "02": 0,
-            "3": "300",
-            "03": 0,
-            "4": "266",
-            "04": 0,
-            "5": "177",
-            "05": 0,
-            "6": "330",
-            "06": 0,
-            "7": "188",
-            "07": 0,
-            "8": "233",
-            "08": 0,
-            "9": "199",
-            "09": 0,
-            "10": "244",
-            "010": 0,
-            type: "D",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "227",
-            "01": 0,
-            "2": "255",
-            "02": 0,
-            "3": "337",
-            "03": 0,
-            "4": "338",
-            "04": 0,
-            "5": "339",
-            "05": 0,
-            "6": "448",
-            "06": 0,
-            "7": "223",
-            "07": 0,
-            "8": "288",
-            "08": 0,
-            "9": "225",
-            "09": 0,
-            "10": "299",
-            "010": 0,
-            type: "D",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "335",
-            "01": 0,
-            "2": "336",
-            "02": 0,
-            "3": "355",
-            "03": 0,
-            "4": "400",
-            "04": 0,
-            "5": "366",
-            "05": 0,
-            "6": "466",
-            "06": 0,
-            "7": "377",
-            "07": 0,
-            "8": "440",
-            "08": 0,
-            "9": "388",
-            "09": 0,
-            "10": "334",
-            "010": 0,
-            type: "D",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "344",
-            "01": 0,
-            "2": "499",
-            "02": 0,
-            "3": "445",
-            "03": 0,
-            "4": "446",
-            "04": 0,
-            "5": "447",
-            "05": 0,
-            "6": "556",
-            "06": 0,
-            "7": "449",
-            "07": 0,
-            "8": "477",
-            "08": 0,
-            "9": "559",
-            "09": 0,
-            "10": "488",
-            "010": 0,
-            type: "D",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "399",
-            "01": 0,
-            "2": "660",
-            "02": 0,
-            "3": "599",
-            "03": 0,
-            "4": "455",
-            "04": 0,
-            "5": "500",
-            "05": 0,
-            "6": "600",
-            "06": 0,
-            "7": "557",
-            "07": 0,
-            "8": "558",
-            "08": 0,
-            "9": "577",
-            "09": 0,
-            "10": "550",
-            "010": 0,
-            type: "D",
-          },
-          {
-            Bazar: i.toString(),
-            "1": "588",
-            "01": 0,
-            "2": "688",
-            "02": 0,
-            "3": "779",
-            "03": 0,
-            "4": "699",
-            "04": 0,
-            "5": "799",
-            "05": 0,
-            "6": "880",
-            "06": 0,
-            "7": "566",
-            "07": 0,
-            "8": "800",
-            "08": 0,
-            "9": "667",
-            "09": 0,
-            "10": "668",
-            "010": 0,
-            type: "D",
-          },
-
-          {
-            Bazar: i.toString(),
-            "1": "669",
-            "01": 0,
-            "2": "778",
-            "02": 0,
-            "3": "788",
-            "03": 0,
-            "4": "770",
-            "04": 0,
-            "5": "889",
-            "05": 0,
-            "6": "899",
-            "06": 0,
-            "7": "700",
-            "07": 0,
-            "8": "990",
-            "08": 0,
-            "9": "900",
-            "09": 0,
-            "10": "677",
-            "010": 0,
-            type: "D",
-          },
-
-          {
-            Bazar: i.toString(),
-            "1": "777",
-            "01": 0,
-            "2": "444",
-            "02": 0,
-            "3": "111",
-            "03": 0,
-            "4": "888",
-            "04": 0,
-            "5": "555",
-            "05": 0,
-            "6": "222",
-            "06": 0,
-            "7": "999",
-            "07": 0,
-            "8": "666",
-            "08": 0,
-            "9": "333",
-            "09": 0,
-            "10": "1000",
-            "010": 0,
-            type: "T",
-          },
-        ],
-      };
-      let x2 = {
-        tum: [
-          { akd: "1", data: 0, bazar_id: i.toString() },
-          { akd: "2", data: 0, bazar_id: i.toString() },
-          { akd: "3", data: 0, bazar_id: i.toString() },
-          { akd: "4", data: 0, bazar_id: i.toString() },
-          { akd: "5", data: 0, bazar_id: i.toString() },
-          { akd: "6", data: 0, bazar_id: i.toString() },
-          { akd: "7", data: 0, bazar_id: i.toString() },
-          { akd: "8", data: 0, bazar_id: i.toString() },
-          { akd: "9", data: 0, bazar_id: i.toString() },
-          { akd: "0", data: 0, bazar_id: i.toString() },
-        ],
-      };
-
-      await this.filltable(x1);
-      await this.fillakdtable(x2);
-    }
-
+      
+      
+      
+    
     window.location.reload();
   }
   async temp(){
@@ -1650,9 +2300,19 @@ export class DASHBOARDComponent implements OnInit {
       )
       .subscribe((data) => {
         this.clienthistoryj = data as JSON;
+        if(Object.keys(this.clienthistoryj).length)
+        {
         this.clienthistory.panu_total = this.clienthistoryj[0].pana_total;
         this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
         this.clienthistory.total = this.clienthistoryj[0].total;
+        }
+        else
+        {
+          this.clienthistory.panu_total = 0;
+          this.clienthistory.akd_total = 0;
+          this.clienthistory.total = 0;
+        }
+    
       });
       (document.getElementById('b') as HTMLInputElement).setSelectionRange(0,10);
       document.getElementById('b').focus()
@@ -1756,6 +2416,7 @@ export class DASHBOARDComponent implements OnInit {
                 (data) => {
                   console.log("data receivesd:", data);
                 },
+        
                 (err) => {
                   console.log("error from backend:", err);
                 }
@@ -1775,6 +2436,7 @@ export class DASHBOARDComponent implements OnInit {
   async asyncForEach(array, callback) {
     for (let index = 0; index < array.length; index++) {
       await callback(array[index], index, array);
+
     }
   }
 
@@ -1789,11 +2451,20 @@ export class DASHBOARDComponent implements OnInit {
       //for (let row of this.dashboarddata) {
       await this.asyncForEach(this.dashboarddata, async (row) => {
         this.asyncForEach(this.head, async (column) => {
+         
           
           if (row[column] == this.number) {
             this.globalc = +this.globalc + 1;
             this.individualhist.client_id = this.client.clientid
-            this.individualhist.sr_no = +this.history.sr_no + 1;
+            this.httpClient
+            .get("http://127.0.0.1:5002/history/" + this.bazar.bazar_id)
+            .subscribe((data) => {
+              this.historydata = data as JSON;
+              this.individualhist.sr_no = +this.historydata.sr_no + 1;
+              //this.history = this.historydata;
+              //console.log(this.historydata);
+            });
+            
             this.individualhist.bazar_id = this.bazar.bazar_id;
             this.individualhist.number = row[column];
             this.individualhist.bet = this.bet1;
@@ -1897,6 +2568,22 @@ export class DASHBOARDComponent implements OnInit {
                 (data) => {
                   console.log("data received:", data);
                   this.httpClient
+        .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+        .subscribe((data) => {
+          this.clienthistorydata = data as JSON;
+          this.overall_pana_total = 0;
+           this.overall_akd_total = 0;
+          for(let row of this.clienthistorydata)
+          {
+            this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+            this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+    
+          }
+          this.overall_total = this.overall_pana_total + this.overall_akd_total;
+          //this.history = this.historydata;
+          //console.log(this.historydata);
+        });
+                  this.httpClient
                     .get(
                       "http://127.0.0.1:5002/getclienthistory/" +
                         this.client.clientid +
@@ -1908,6 +2595,8 @@ export class DASHBOARDComponent implements OnInit {
                       this.clienthistory.panu_total = this.clienthistoryj[0].pana_total;
                       this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
                       this.clienthistory.total = this.clienthistoryj[0].total;
+                      
+
                     }); 
                   
 
@@ -1925,12 +2614,7 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
-          
-                
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+              
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -1945,6 +2629,23 @@ export class DASHBOARDComponent implements OnInit {
               )
               .subscribe(
                 (data) => {
+
+                  this.httpClient
+        .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+        .subscribe((data) => {
+          this.clienthistorydata = data as JSON;
+          this.overall_pana_total = 0;
+           this.overall_akd_total = 0;
+          for(let row of this.clienthistorydata)
+          {
+            this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+            this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+    
+          }
+          this.overall_total = this.overall_pana_total + this.overall_akd_total;
+          //this.history = this.historydata;
+          //console.log(this.historydata);
+        });
                   console.log("data receivesd:", data);
                 },
                 (err) => {
@@ -1963,23 +2664,33 @@ export class DASHBOARDComponent implements OnInit {
                 this.clienthistory.panu_total = this.clienthistoryj[0].pana_total;
                 this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
                 this.clienthistory.total = this.clienthistoryj[0].total;
-              });
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
-          
+
                 
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+
+              });
+              
+              
           }
         });
+        this.httpClient
+        .get("http://127.0.0.1:5002/history/" + this.bazar.bazar_id)
+        .subscribe((data) => {
+          this.historydata = data as JSON;
+          //this.history = this.historydata;
 
+         console.log(this.historydata);
+         if(this.historydata.length != 0){ this.history.sr_no = this.historydata[this.historydata.length - 1].sr_no;}
+         else{ this.history.sr_no = 0;}
+        
+        });
+        this.history.sr_no = +this.history.sr_no + 1;
       this.history.client_id = this.client.clientid;
       this.history.bet = this.bet1;
       this.history.bet_total = this.bet1 * this.globalc;
       this.history.bazar = this.bazar.bazar_id;
       this.history.code = this.code;
       this.history.number = this.number;
-      this.history.sr_no = +this.history.sr_no + 1;
+     
       this.httpClient
         .post("http://127.0.0.1:5002/addhistory", this.history, httpOptions)
         .subscribe(
@@ -2156,11 +2867,22 @@ export class DASHBOARDComponent implements OnInit {
               });
           }
         });
-        this.overall_akd_total = +this.overall_akd_total + +akd_total 
-          
-                
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+        this.httpClient
+        .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+        .subscribe((data) => {
+          this.clienthistorydata = data as JSON;
+          this.overall_pana_total = 0;
+           this.overall_akd_total = 0;
+          for(let row of this.clienthistorydata)
+          {
+            this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+            this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+    
+          }
+          this.overall_total = this.overall_pana_total + this.overall_akd_total;
+          //this.history = this.historydata;
+          //console.log(this.historydata);
+        });
       this.history.client_id = this.client.clientid;
       this.history.bet = this.bet1;
       this.history.bet_total = this.bet1 * this.globalc;
@@ -2332,14 +3054,22 @@ export class DASHBOARDComponent implements OnInit {
               );
               
               
-                  this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
           
-                
-                //console.log("yes"+this.overall_pana_total)
+                }
                 this.overall_total = this.overall_pana_total + this.overall_akd_total;
                 //this.history = this.historydata;
                 //console.log(this.historydata);
+              });
             
 
           } else {
@@ -2377,14 +3107,22 @@ export class DASHBOARDComponent implements OnInit {
                 }
               );
               
-              
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           
                
           }
@@ -2545,13 +3283,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
           
-                
-                //console.log("yes"+this.overall_pana_total)
+                }
                 this.overall_total = this.overall_pana_total + this.overall_akd_total;
                 //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
       
           } else {
             this.clienthistory.client_id = this.client.clientid;
@@ -2587,13 +3334,22 @@ export class DASHBOARDComponent implements OnInit {
                 this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
                 this.clienthistory.total = this.clienthistoryj[0].total;
               });
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
           
-                
-                //console.log("yes"+this.overall_pana_total)
+                }
                 this.overall_total = this.overall_pana_total + this.overall_akd_total;
                 //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
 
@@ -2750,13 +3506,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
-          
-                
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
-                //this.history = this.historydata;
+              this.httpClient
+        .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+        .subscribe((data) => {
+          this.clienthistorydata = data as JSON;
+          this.overall_pana_total = 0;
+           this.overall_akd_total = 0;
+          for(let row of this.clienthistorydata)
+          {
+            this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+            this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+    
+          }
+          this.overall_total = this.overall_pana_total + this.overall_akd_total;
+          //this.history = this.historydata;
+          //console.log(this.historydata);
+        });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -2790,13 +3555,22 @@ export class DASHBOARDComponent implements OnInit {
                 this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
                 this.clienthistory.total = this.clienthistoryj[0].total;
               });
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
           
-                
-                //console.log("yes"+this.overall_pana_total)
+                }
                 this.overall_total = this.overall_pana_total + this.overall_akd_total;
                 //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
 
@@ -2957,13 +3731,22 @@ export class DASHBOARDComponent implements OnInit {
                 console.log("error from backend:", err);
               }
             );
-            this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
-          
-                
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
-                //this.history = this.historydata;
+            this.httpClient
+            .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+            .subscribe((data) => {
+              this.clienthistorydata = data as JSON;
+              this.overall_pana_total = 0;
+               this.overall_akd_total = 0;
+              for(let row of this.clienthistorydata)
+              {
+                this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+        
+              }
+              this.overall_total = this.overall_pana_total + this.overall_akd_total;
+              //this.history = this.historydata;
+              //console.log(this.historydata);
+            });
         } else {
           this.clienthistory.client_id = this.client.clientid;
           this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -2997,13 +3780,22 @@ export class DASHBOARDComponent implements OnInit {
               this.clienthistory.akd_total = this.clienthistoryj[0].akd_total;
               this.clienthistory.total = this.clienthistoryj[0].total;
             });
-            this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
-          
-                
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
-                //this.history = this.historydata;
+            this.httpClient
+            .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+            .subscribe((data) => {
+              this.clienthistorydata = data as JSON;
+              this.overall_pana_total = 0;
+               this.overall_akd_total = 0;
+              for(let row of this.clienthistorydata)
+              {
+                this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+        
+              }
+              this.overall_total = this.overall_pana_total + this.overall_akd_total;
+              //this.history = this.historydata;
+              //console.log(this.historydata);
+            });
         }
       });
 
@@ -3161,13 +3953,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
           
-                
-                //console.log("yes"+this.overall_pana_total)
+                }
                 this.overall_total = this.overall_pana_total + this.overall_akd_total;
                 //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -3370,13 +4171,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
           
-                
-                //console.log("yes"+this.overall_pana_total)
+                }
                 this.overall_total = this.overall_pana_total + this.overall_akd_total;
                 //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -3397,13 +4207,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
           
-                
-                //console.log("yes"+this.overall_pana_total)
+                }
                 this.overall_total = this.overall_pana_total + this.overall_akd_total;
                 //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -3576,13 +4395,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
               
 
           } else {
@@ -3605,13 +4433,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -3784,13 +4621,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -3811,13 +4657,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -3991,13 +4846,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -4018,13 +4882,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -4186,13 +5059,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -4213,13 +5095,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -4376,13 +5267,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -4403,13 +5303,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -4546,13 +5455,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -4573,13 +5491,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -4736,13 +5663,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -4763,13 +5699,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -4922,13 +5867,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -4949,13 +5903,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -5107,12 +6070,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
             //this.history = this.historydata;
           } else {
             this.clienthistory.client_id = this.client.clientid;
@@ -5134,13 +6107,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -5300,13 +6282,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -5459,13 +6450,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -5486,13 +6486,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -5644,13 +6653,22 @@ export class DASHBOARDComponent implements OnInit {
                       console.log("error from backend:", err);
                     }
                   );
-                  this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
-          
-                
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
-                //this.history = this.historydata;
+                  this.httpClient
+                  .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+                  .subscribe((data) => {
+                    this.clienthistorydata = data as JSON;
+                    this.overall_pana_total = 0;
+                     this.overall_akd_total = 0;
+                    for(let row of this.clienthistorydata)
+                    {
+                      this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                      this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+              
+                    }
+                    this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                    //this.history = this.historydata;
+                    //console.log(this.historydata);
+                  });
               } else {
                 this.clienthistory.client_id = this.client.clientid;
                 this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -5671,13 +6689,22 @@ export class DASHBOARDComponent implements OnInit {
                       console.log("error from backend:", err);
                     }
                   );
-                  this.overall_pana_total = +this.overall_pana_total + +pana_total 
-                  this.overall_akd_total = +this.overall_akd_total 
-          
-                
-                //console.log("yes"+this.overall_pana_total)
-                this.overall_total = this.overall_pana_total + this.overall_akd_total;
-                //this.history = this.historydata;
+                  this.httpClient
+                  .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+                  .subscribe((data) => {
+                    this.clienthistorydata = data as JSON;
+                    this.overall_pana_total = 0;
+                     this.overall_akd_total = 0;
+                    for(let row of this.clienthistorydata)
+                    {
+                      this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                      this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+              
+                    }
+                    this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                    //this.history = this.historydata;
+                    //console.log(this.historydata);
+                  });
               }
             });
       
@@ -6002,13 +7029,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -6029,13 +7065,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -6188,13 +7233,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -6215,13 +7269,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+                this.httpClient
+        .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+        .subscribe((data) => {
+          this.clienthistorydata = data as JSON;
+          this.overall_pana_total = 0;
+           this.overall_akd_total = 0;
+          for(let row of this.clienthistorydata)
+          {
+            this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+            this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+    
+          }
+          this.overall_total = this.overall_pana_total + this.overall_akd_total;
+          //this.history = this.historydata;
+          //console.log(this.historydata);
+        });
           }
         });
   
@@ -6374,13 +7437,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -6401,13 +7473,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -6560,13 +7641,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -6587,13 +7677,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   
@@ -6749,13 +7848,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           } else {
             this.clienthistory.client_id = this.client.clientid;
             this.clienthistory.bazar_id = this.bazar.bazar_id;
@@ -6776,13 +7884,22 @@ export class DASHBOARDComponent implements OnInit {
                   console.log("error from backend:", err);
                 }
               );
-              this.overall_pana_total = +this.overall_pana_total + +pana_total 
-              this.overall_akd_total = +this.overall_akd_total 
-      
-            
-            //console.log("yes"+this.overall_pana_total)
-            this.overall_total = this.overall_pana_total + this.overall_akd_total;
-            //this.history = this.historydata;
+              this.httpClient
+              .get("http://127.0.0.1:5002/clienthistory/" + this.bazar.bazar_id)
+              .subscribe((data) => {
+                this.clienthistorydata = data as JSON;
+                this.overall_pana_total = 0;
+                 this.overall_akd_total = 0;
+                for(let row of this.clienthistorydata)
+                {
+                  this.overall_pana_total = +this.overall_pana_total + +row['pana_total'] 
+                  this.overall_akd_total = +this.overall_akd_total + +row['akd_total']
+          
+                }
+                this.overall_total = this.overall_pana_total + this.overall_akd_total;
+                //this.history = this.historydata;
+                //console.log(this.historydata);
+              });
           }
         });
   

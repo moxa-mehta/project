@@ -11,12 +11,15 @@
       
       </div>
     </div>
-    <div class="content-table-1">
-      <table id=demo>
+    <div class="content-table-1" style="height:575px; padding-right: 10px; padding-bottom: 100px;">
+      
+      <table id=demo style="height:400px;padding-right: 10px;">
+        <div style="display: flex;flex-direction: row;flex-basis: 20%; ;">
         <td>
-          <div style="height:415px;overflow:auto;padding-right: 10px;">
+          <div style="height:400px;padding-right: 10px;">
       
             <table id=dashboard>
+              
               <tr>
                 <th *ngFor="let column of headers" style="text-align:center;">{{column}} </th>
               </tr>
@@ -42,8 +45,9 @@
       
                 </tr>
               </tbody>
-      
+          
             </table>
+          
           </div>
         </td>
         <td>
@@ -68,17 +72,18 @@
       
               </tr>
             </tbody>
-      
+        
           </table>
         </td>
-      
+      </div>
+    
       </table>
     </div>
     
   </div>
   <div class="inner-main-2">
     <div class="content-inputs">
-      <div style="display: flex;flex-direction: column;flex-basis: 58%;">
+      <div style="display: flex;flex-direction: column;flex-basis: 60%; ;">
         <div class="input-rows">
           <label id="allBorderLabel">&nbsp;BAZAR &nbsp;
             <input id="leftBorderInput" (change)="getdashboarddata()" [(ngModel)]="bazar.bazar_id" size="1" />
@@ -150,6 +155,7 @@
             <input id="leftBorderInput" [(ngModel)]="akd" size="3" />
           </label>
           <button (click) ='create_account()' class="button button5"> Account</button>
+          <p id="fire"></p>
         </div>
         <div class="input-rows">
           <label id="allBorderLabel"> &nbsp;History number &nbsp;
@@ -165,7 +171,8 @@
         </div>
       </div>
     </div>
-    <div class="content-table-2" style="width: 380px;">
+ 
+    <div class="content-table-2" style="overflow:auto">
       <table id=history>
         <tr>
           <th *ngFor="let row of this.historyheaders">{{row}}</th>

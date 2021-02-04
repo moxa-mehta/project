@@ -282,26 +282,26 @@ def getclientoverall(client_id):
 		resp = dumps(user)
 		return resp
 
-@app.route("/deletedashboard",methods=['DELETE'])
-def deletedashboard():
-		id = mongo.db.sdashboard.delete_many({})
+@app.route("/deletedashboard/<bazar_id>",methods=['DELETE'])
+def deletedashboard(bazar_id):
+		id = mongo.db.sdashboard.delete_many({'Bazar': bazar_id})
 		return jsonify({'text':'moxa!'})
-@app.route("/deletehistory",methods=['DELETE'])
-def deletehistory():
-		id = mongo.db.history.delete_many({})
+@app.route("/deletehistory/<bazar_id>",methods=['DELETE'])
+def deletehistory(bazar_id):
+		id = mongo.db.history.delete_many({'bazar': bazar_id})
 		return jsonify({'text':'moxa!'})
 
-@app.route("/deleteakdtable",methods=['DELETE'])
-def deleteakdtable():
-		id = mongo.db.akdtable.delete_many({})
+@app.route("/deleteakdtable/<bazar_id>",methods=['DELETE'])
+def deleteakdtable(bazar_id):
+		id = mongo.db.akdtable.delete_many({'bazar_id':bazar_id})
 		return jsonify({'text':'moxa!'})
-@app.route("/deletetable",methods=['DELETE'])
-def deletetable():
-		id = mongo.db.clienthistory.delete_many({})
+@app.route("/deletetable/<bazar_id>",methods=['DELETE'])
+def deletetable(bazar_id):
+		id = mongo.db.clienthistory.delete_many({'bazar_id':bazar_id})
 		return jsonify({'text':'moxa!'})
-@app.route("/deleteindividualhist",methods=['DELETE'])
-def deleteindividualhist():
-		id = mongo.db.individualhist.delete_many({})
+@app.route("/deleteindividualhist/<bazar_id>",methods=['DELETE'])
+def deleteindividualhist(bazar_id):
+		id = mongo.db.individualhist.delete_many({'bazar_id' : bazar_id})
 		return jsonify({'text':'moxa!'})
 @app.route("/deleteaccount",methods=['DELETE'])
 def deleteaccount():
