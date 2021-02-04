@@ -106,23 +106,7 @@
             <input id ='d'  [(ngModel)]="number" size="9" (keyup.arrowup) = 'change_code()' (keyup.arrowleft) = 'change_code()'  (keyup.enter)="getAllEmployees()" />
           </label>
         </div>
-        <div class="input-rows">
-          <label id="allBorderLabel">&nbsp;SP Limit &nbsp;
-            <input id="leftBorderInput" [(ngModel)]="sp_limit" size="3" />
-          </label>
-          <label id="allBorderLabel"> &nbsp;DP Limit &nbsp;
-            <input id="leftBorderInput" [(ngModel)]="dp_limit" size="3" />
-          </label>
-        </div>
-        <div class="input-rows">
-          <label id="allBorderLabel">&nbsp;TP Limit &nbsp;
-            <input id="leftBorderInput" [(ngModel)]="tp_limit" size="3" />
-          </label>
-      
-          <label id="allBorderLabel">&nbsp;AKD Limit &nbsp;
-            <input id="leftBorderInput" [(ngModel)]="akd_limit" size="3" />
-          </label>
-        </div>
+        
         <div class="input-rows">
           <label id="allBorderLabel">&nbsp;Pana Total &nbsp;
             <input id="leftBorderInput" [(ngModel)]="clienthistory.panu_total" size="3" />
@@ -147,6 +131,23 @@
         </div>
       </div>
       <div style="display: flex;flex-direction: column;padding-right: 1px;">
+        <div class="input-rows">
+          <label id="allBorderLabel">&nbsp;SP Limit &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="sp_limit" size="3" />
+          </label>
+          <label id="allBorderLabel"> &nbsp;DP Limit &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="dp_limit" size="3" />
+          </label>
+        </div>
+        <div class="input-rows">
+          <label id="allBorderLabel">&nbsp;TP Limit &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="tp_limit" size="3" />
+          </label>
+      
+          <label id="allBorderLabel">&nbsp;AKD Limit &nbsp;
+            <input id="leftBorderInput" [(ngModel)]="akd_limit" size="3" />
+          </label>
+        </div>
         <div class="input-rows">
           <label id="allBorderLabel">&nbsp;Pana &nbsp;
             <input id="leftBorderInput" [(ngModel)]="pana" size="3" />
