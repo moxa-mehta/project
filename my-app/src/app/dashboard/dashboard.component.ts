@@ -2327,8 +2327,8 @@ export class DASHBOARDComponent implements OnInit {
     document.getElementById('d').focus() 
   }
   change_client(){
-    (document.getElementById('a') as HTMLInputElement).setSelectionRange(0,10);
-    document.getElementById('a').focus() 
+    (document.getElementById('a allBorderLabel') as HTMLInputElement).setSelectionRange(0,10);
+    document.getElementById('a allBorderLabel').focus() 
   }
   async create_account() {
     //inserting in datelist table

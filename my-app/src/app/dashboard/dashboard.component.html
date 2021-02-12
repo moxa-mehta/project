@@ -1,16 +1,7 @@
 <div class="outer-main-1">
+  
   <div class="inner-main-1">
-    <div class="menu">
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fa fa-bars"> Menu</i></button>
-        <div class="dropdown-content">
-          <a href="http://localhost:4200/client">Client</a>
-          <a href="http://localhost:4200/account">Account</a>
-      
-        </div>
-      
-      </div>
-    </div>
+   
     <div class="content-table-1" style="height:580px; padding-right: 10px; padding-bottom: 100px;">
       
       <table id=demo style="height:400px;padding-right: 10px;">
@@ -51,7 +42,10 @@
           </div>
         </td>
         <td>
-          <table id=dashboard>
+          <table>
+            <tbody>
+              <td>
+          <table id=akdtable>
             <tr >
               <th *ngFor="let column of akdheaders" style="text-align:center;">{{column}} </th>
             </tr>
@@ -72,9 +66,45 @@
       
               </tr>
             </tbody>
+            
         
           </table>
         </td>
+        <td>
+          <div class="menu" style="padding-bottom: 240px;">
+            <div class="dropdown">
+              <button class="dropbtn"><i class="fa fa-bars"> Menu</i></button>
+              <div class="dropdown-content">
+                <a href="http://localhost:4200/client">Client</a>
+                <a href="http://localhost:4200/account">Account</a>
+            
+              </div>
+            
+            </div>
+          </div>
+        </td>
+        </tbody>
+        </table>
+          <div class="content-table-2" >
+            <table id=history>
+              <tr>
+                <th *ngFor="let row of this.historyheaders">{{row}}</th>
+              </tr>
+              <tbody>
+                <tr *ngFor="let row of this.historydata">
+            
+                  <td *ngFor="let column of this.historyheaders">
+                    {{row[column]}}
+            
+                  </td>
+            
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </td>
+        
+
       </div>
     
       </table>
@@ -96,14 +126,15 @@
           <label>
             <input id="a allBorderLabel" (keyup.enter)= 'change_bet()' (keyup.arrowdown) = 'change_bet()' (keyup.arrowright) = 'change_bet()' [(ngModel)]="client.clientid" size="1" />
           </label>
-          <label>&nbsp; &nbsp; 
-            <input  id="b" (keyup.enter)= 'change_code()' (keyup.arrowup) = 'change_client()' (keyup.arrowleft) = 'change_client()' (keyup.arrowdown) = 'change_code()' (keyup.arrowright) = 'change_code()' [(ngModel)]="bet" size="3" />
+          <label>&nbsp; &nbsp;
+            <input id ='b'  (keyup.enter)= 'change_code()' [(ngModel)]="number" size="9" (keyup.arrowup) = 'change_client()' (keyup.arrowleft) = 'change_client()' (keyup.arrowright) = 'change_code()'  (keyup.arrowdown) = 'change_code()' /> 
           </label>
           <label>&nbsp; &nbsp; 
             <input id ='c' (keyup.enter)= 'change_number()' (keyup.arrowup) = 'change_bet()' (keyup.arrowleft) = 'change_bet()' (keyup.arrowdown) = 'change_number()' (keyup.arrowright) = 'change_number()'[(ngModel)]="code" size="1" />
           </label>
           <label>&nbsp; &nbsp; 
-            <input id ='d'  [(ngModel)]="number" size="9" (keyup.arrowup) = 'change_code()' (keyup.arrowleft) = 'change_code()'  (keyup.enter)="getAllEmployees()" />
+            <input  id="d"  (keyup.arrowup) = 'change_code()'   (keyup.arrowleft) = 'change_code()' [(ngModel)]="bet" size="3" (keyup.enter)="getAllEmployees()" />
+            
           </label>
         </div>
         
@@ -173,22 +204,6 @@
       </div>
     </div>
  
-    <div class="content-table-2" style="overflow:auto">
-      <table id=history>
-        <tr>
-          <th *ngFor="let row of this.historyheaders">{{row}}</th>
-        </tr>
-        <tbody>
-          <tr *ngFor="let row of this.historydata">
-      
-            <td *ngFor="let column of this.historyheaders">
-              {{row[column]}}
-      
-            </td>
-      
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    
   </div>
 </div>

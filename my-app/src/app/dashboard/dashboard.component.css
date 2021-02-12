@@ -3,11 +3,16 @@
   border-collapse: collapse;
   width: 100%;
 }
+#akdtable{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 200px;
+}
 #history {
 font-family: Arial, Helvetica, sans-serif;
 border-collapse: collapse;
-width: 350px;
-height: 200px;
+width: 400px;
+height: 300px;
 overflow-y:scroll;
 display:block;
 }
@@ -37,6 +42,13 @@ float:left;
 .content-table-1{
   display: flex;
 padding:10px;
+flex : 10%;
+flex-direction: row;
+
+}
+.content-table-2{
+  display: flex;
+padding : 10px 0 0 0;
 flex : 10%;
 flex-direction: row;
 
@@ -78,6 +90,29 @@ flex-grow: 1;
   #dashboard td:nth-child(even){
       background-color: lightgray;
   }
+  #akdtable tr{
+    border: 1px solid black;
+    padding: 3px;
+    width: 55px;
+    height: -1px;
+   
+    
+
+}
+#akdtable th , #dashboard td{
+  border: 1px solid black;
+  padding: 1px;
+  width: 55px;
+  height: -1px;
+
+  
+  
+
+}
+
+#akdtable td:nth-child(even){
+    background-color: lightgray;
+}
   #demo{
       border-collapse:separate;
       border-spacing: 10spx;
